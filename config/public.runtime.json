@@ -1,0 +1,24 @@
+{
+  "entitlementUrl": "https://entitlement-service.fly.dev",
+  "portalAllowedHosts": [
+    "entitlement-service.fly.dev",
+    "sandbox-customer-portal.paddle.com",
+    "customer-portal.paddle.com"
+  ],
+  "billingHosts": [
+    "sandbox-customer-portal.paddle.com",
+    "customer-portal.paddle.com"
+  ],
+  "entitlementHosts": [
+    "entitlement-service.fly.dev"
+  ],
+  "paddle": {
+    "env": "sandbox",
+    "clientToken": "test_d5bb3a8eb5c637bd6b1aa06f4d7",
+    "priceMonthly": "pri_01kgcvtzzkrzj64517d63v1jqx",
+    "priceYearly": "pri_01kgcvvzpqdygxzakbw6b70qj8"
+  },
+  "assets": {
+    "baseUrl": "https://github.com/DBINNS4/LeadAEAssist-Releases-Sandbox/releases/download/v{{APP_VERSION}}"
+  }
+}

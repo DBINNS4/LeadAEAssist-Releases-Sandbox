@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "assets": {
+    "whisper.model.base.en": {
+      "type": "file",
+      "installPath": "whisper/models/ggml-base.en.bin",
+      "seedPaths": [
+        "whisper.cpp/models/ggml-base.en.bin"
+      ],
+      "downloadUrl": null,
+      "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002",
+      "size": 147964211,
+      "relativeUrl": "ggml-base.en.bin"
+    },
+    "whisper.model.base.multi": {
+      "type": "file",
+      "installPath": "whisper/models/ggml-base.bin",
+      "seedPaths": [
+        "whisper.cpp/models/ggml-base.bin"
+      ],
+      "downloadUrl": null,
+      "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe",
+      "size": 147951465,
+      "relativeUrl": "ggml-base.bin"
+    },
+    "puppeteer.cache.darwin.arm64": {
+      "type": "archive",
+      "installDir": "puppeteer/cache/chrome-127.0.6533.88/darwin-arm64",
+      "seedPaths": [
+        "puppeteer",
+        "vendor/puppeteer"
+      ],
+      "downloadUrl": null,
+      "sha256": "c10557106e0532718c4d856d9e96c2eff23cd19ee04322fa82a5b90ebe8d405e",
+      "size": 138782125,
+      "archiveFormat": "zip",
+      "relativeUrl": "chromium-mac-arm64-127.0.6533.88.zip",
+      "entrypoint": "chrome/mac_arm-127.0.6533.88/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+      "seedSha256": "080f1b6cc44a8eb51f6f2d8dde4bde903b8358371ab22b31a1ce651cebde70df"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "token": "",
+  "tokenSource": "placeholder",
+  "port": 32123,
+  "expiresAt": 0,
+  "baseUrl": "http://127.0.0.1:32123",
+  "debugUI": false
+}

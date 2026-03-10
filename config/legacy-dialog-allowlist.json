@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Maximum allowed raw browser dialog calls during the phased migration. Counts may go down, but they must not go up and they must not spread to new files.",
+  "maxAllowedByFile": {}
+}

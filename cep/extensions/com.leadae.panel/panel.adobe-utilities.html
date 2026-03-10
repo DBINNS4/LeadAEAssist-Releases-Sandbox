@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LEAD AE – Adobe Automate Panel</title>
+
+    <script src="CSInterface.js"></script>
+    <script src="renderer.cep-adobe-utilities.js" defer></script>
+    
+    <!-- Optional: basic styling -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        background-color: #222;
+        color: #fff;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .panel-section {
+        padding: 20px 10px 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .logo-center-wrapper {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 0;
+      }
+      .logo-center-wrapper img {
+        max-width: 60%;
+        height: auto;
+      }
+      .connect-button {
+        margin-top: 0;
+      }
+      #job-checklist {
+        background: #111;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        box-shadow: inset 0 0 8px #0008;
+      }
+
+      #job-checklist ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #job-checklist li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 4px 0;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: background .2s, color .2s;
+      }
+      #job-checklist li.active { color: #0af; background: rgba(0,128,255,.2); }
+      #job-checklist li.done   { color: #0f0; background: rgba(0,255,0,.15); }
+      #job-checklist li.error  { color: #f55; background: rgba(255,0,0,.15); }
+
+      #job-checklist .status {
+        width: 18px;
+        display: inline-block;
+        text-align: center;
+      }
+
+      /* === CEP Panel Reconnect Button Styling === */
+      .container {
+        width: 3em;
+        height: 3em;
+        position: relative;
+      }
+
+      .container input {
+        display: none;
+      }
+
+      .container .button {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px solid #090909;
+        background-color: transparent;
+        background-image: linear-gradient(145deg, #171717, #444245);
+        box-sizing: border-box;
+        box-shadow: inset 2px 2px 0 #1c1c1c, inset -2px -2px 0px #1c1c1c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      label.button[for="reconnect-checkbox"][data-state="connected"] {
+        cursor: not-allowed;
+      }
+
+      .container .button .icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      .container .button .icon svg {
+        width: 100%;
+        height: 100%;
+        fill: #1c1c1c;
+      }
+
+      /* Active/Connected state */
+      #reconnect-checkbox:checked + .button {
+        border: 2px solid rgb(125, 115, 243);
+        animation: animeBorder 0.3s linear alternate-reverse infinite;
+      }
+
+      #reconnect-checkbox:checked + .button .icon svg {
+        fill: rgb(125, 115, 243);
+        animation: animeFill 0.3s linear alternate-reverse infinite;
+      }
+
+      /* Animations */
+      @keyframes animeFill {
+        to {
+          fill: rgb(125, 115, 243);
+        }
+      }
+
+      @keyframes animeBorder {
+        to {
+          border-color: rgb(125, 115, 243);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel-section">
+      <div class="logo-center-wrapper">
+        <img src="img/lead_ae_logo.jpeg" alt="LEAD AE logo" />
+        <div class="connect-button">
+          <div class="container">
+            <input type="checkbox" id="reconnect-checkbox" />
+            <label for="reconnect-checkbox" class="button" aria-label="Reconnect" title="Reconnect">
+              <span class="icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 6.27h-2.02A6 6 0 1 1 12 6a5.96 5.96 0 0 1 4.24 1.76L14 10h6V4l-2.35 2.35Z"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div id="job-checklist" class="status-panel" aria-live="polite">
+        <ul></ul> <!-- dynamically populated per job -->
+      </div>
+      <div
+        id="adobe-log"
+        style="display: none; white-space: pre; font-size: 11px; max-height: 150px; overflow-y: auto; background: #000; color: #0f0; padding: 4px; margin-top: 8px;"
+      ></div>
+    </div>
+
+    <script>
+      const PANEL_DEBUG_MAX_LINES = 400;
+      const PANEL_DEBUG_MAX_CHARS = 150 * 1024;
+      const panelDebugState = {
+        lines: [],
+        totalChars: 0,
+        visible: false
+      };
+
+      function isExplicitCepDebugUiEnabled() {
+        if (window.electron?.isPackaged === true) {
+          return false;
+        }
+
+        return (
+          window.__LEADAE_ENABLE_CEP_DEBUG_UI__ === true ||
+          window.DEBUG_UI === true ||
+          window.electron?.DEBUG_UI === true ||
+          window.electron?.isPackaged === false
+        );
+      }
+
+      function forceHidePanelDebugHost() {
+        const el = document.getElementById('adobe-log');
+        panelDebugState.visible = false;
+        panelDebugState.lines = [];
+        panelDebugState.totalChars = 0;
+        if (!el) {
+          return;
+        }
+
+        el.textContent = '';
+        el.hidden = true;
+        el.style.display = 'none';
+        el.style.visibility = 'hidden';
+        el.style.height = '0';
+        el.style.minHeight = '0';
+        el.style.maxHeight = '0';
+        el.style.padding = '0';
+        el.style.margin = '0';
+        el.style.border = '0';
+        el.style.overflow = 'hidden';
+      }
+
+      function restorePanelDebugHost() {
+        const el = document.getElementById('adobe-log');
+        if (!el) {
+          return;
+        }
+
+        el.hidden = false;
+        el.style.visibility = '';
+        el.style.height = '';
+        el.style.minHeight = '';
+        el.style.maxHeight = '150px';
+        el.style.padding = '4px';
+        el.style.margin = '8px 0 0';
+        el.style.border = '';
+        el.style.overflow = '';
+        el.style.overflowY = 'auto';
+      }
+
+      function stringifyDebugArg(value) {
+        if (typeof value === 'object' && value !== null) {
+          try {
+            return JSON.stringify(value, null, 2);
+          } catch (err) {
+            return `[Unserializable Object: ${err && err.message ? err.message : 'unknown error'}]`;
+          }
+        }
+
+        return String(value);
+      }
+
+      function appendDebugLine(line) {
+        if (!isExplicitCepDebugUiEnabled()) {
+          return;
+        }
+
+        let nextLine = line;
+
+        if (nextLine.length > PANEL_DEBUG_MAX_CHARS) {
+          nextLine = `${nextLine.slice(0, PANEL_DEBUG_MAX_CHARS)}… [line truncated]`;
+        }
+
+        panelDebugState.lines.push(nextLine);
+        panelDebugState.totalChars += nextLine.length + 1;
+
+        while (panelDebugState.lines.length > PANEL_DEBUG_MAX_LINES) {
+          const removed = panelDebugState.lines.shift();
+          panelDebugState.totalChars -= removed.length + 1;
+        }
+
+        while (panelDebugState.totalChars > PANEL_DEBUG_MAX_CHARS && panelDebugState.lines.length > 1) {
+          const removed = panelDebugState.lines.shift();
+          panelDebugState.totalChars -= removed.length + 1;
+        }
+
+        if (panelDebugState.totalChars > PANEL_DEBUG_MAX_CHARS && panelDebugState.lines.length === 1) {
+          const trimmed = `${panelDebugState.lines[0].slice(0, PANEL_DEBUG_MAX_CHARS)}… [line truncated]`;
+          panelDebugState.lines[0] = trimmed;
+          panelDebugState.totalChars = trimmed.length + 1;
+        }
+      }
+
+      function renderPanelDebugLog() {
+        if (!isExplicitCepDebugUiEnabled()) {
+          forceHidePanelDebugHost();
+          return;
+        }
+
+        const el = document.getElementById('adobe-log');
+        if (!el || !panelDebugState.visible) {
+          return;
+        }
+
+        el.textContent = panelDebugState.lines.join('\n');
+        if (panelDebugState.lines.length > 0) {
+          el.textContent += '\n';
+        }
+        el.scrollTop = el.scrollHeight;
+      }
+
+
+      function setPanelDebugVisibility(enabled) {
+        if (!isExplicitCepDebugUiEnabled()) {
+          forceHidePanelDebugHost();
+          return;
+        }
+
+        panelDebugState.visible = !!enabled;
+        const el = document.getElementById('adobe-log');
+        if (!el) {
+          return;
+        }
+
+        restorePanelDebugHost();
+        el.style.display = panelDebugState.visible ? 'block' : 'none';
+
+        if (!panelDebugState.visible) {
+          el.textContent = '';
+          return;
+        }
+
+        renderPanelDebugLog();
+      }
+
+      window.setPanelDebugVisibility = function (enabled) {
+        setPanelDebugVisibility(enabled);
+      };
+
+      window.panelDebug = function (...args) {
+        if (!isExplicitCepDebugUiEnabled()) {
+          console.log(...args);
+          return;
+        }
+
+        appendDebugLine(args.map(stringifyDebugArg).join(' '));
+        if (panelDebugState.visible) {
+          renderPanelDebugLog();
+        }
+        console.log(...args);
+      };
+
+      window.clearPanelDebugLog = function () {
+        panelDebugState.lines = [];
+        panelDebugState.totalChars = 0;
+
+        if (!isExplicitCepDebugUiEnabled()) {
+          forceHidePanelDebugHost();
+          return;
+        }
+
+        const el = document.getElementById('adobe-log');
+        if (!panelDebugState.visible) {
+          if (el) el.textContent = '';
+          return;
+        }
+        renderPanelDebugLog();
+      };
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!isExplicitCepDebugUiEnabled()) {
+          forceHidePanelDebugHost();
+        }
+        setPanelDebugVisibility(false);
+
+        try {
+          if (typeof CSInterface !== "undefined") {
+            panelDebug("✅ CSInterface loaded");
+          } else {
+            panelDebug("❌ CSInterface NOT loaded");
+          }
+        } catch (err) {
+          panelDebug("❌ Error loading CSInterface", err);
+        }
+      });
+    </script>
+  </body>
+</html>

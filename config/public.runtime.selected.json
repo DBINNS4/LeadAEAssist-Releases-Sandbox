@@ -1,0 +1,22 @@
+{
+  "entitlementUrl": "https://entitlement-service-prod.fly.dev",
+  "portalAllowedHosts": [
+    "customer-portal.paddle.com",
+    "entitlement-service-prod.fly.dev"
+  ],
+  "billingHosts": [
+    "customer-portal.paddle.com"
+  ],
+  "entitlementHosts": [
+    "entitlement-service-prod.fly.dev"
+  ],
+  "paddle": {
+    "env": "production",
+    "clientToken": "live_0a3742f9f192a52a0f77aaab553",
+    "priceMonthly": "pri_01khm00c7kk00hv2x16aaahc1f",
+    "priceYearly": "pri_01khm0153ckwdv4rtfhfdxr1cm"
+  },
+  "assets": {
+    "baseUrl": "https://github.com/DBINNS4/LeadAEAssist-Releases/releases/download/v{{APP_VERSION}}"
+  }
+}

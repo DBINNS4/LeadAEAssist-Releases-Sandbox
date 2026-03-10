@@ -1,0 +1,45 @@
+{
+  "licenseKey": "",
+  "lastUsed": {
+    "sourceFolder": "",
+    "destinationFolder": "",
+    "backupFolder": ""
+  },
+  "preferences": {
+    "systemNotifications": false,
+    "offlineMode": false,
+    "crashReporting": true,
+    "theme": "dark",
+    "language": "en",
+    "fontBody": "Arial",
+    "fontHeadings": "Arial",
+    "fontMono": "Arial",
+    "fontUI": "Arial",
+    "aiModel": "lead",
+    "apiKeyStored": false,
+    "webhookUrl": "",
+    "webhookLogging": false,
+    "webhookOnlyFail": false,
+    "dualEngine": false,
+    "preferEngine": "lead",
+    "diarization": false,
+    "clearTempOnStartup": false,
+    "clearCacheOnStartup": false,
+    "tempMaxAgeDays": 7,
+    "autoUpdateCheckOnLaunch": true,
+    "autoUpdateAutoDownload": true
+  },
+  "presets": {
+    "transcode": [
+      "social_mp4.json",
+      "broadcast_mxf.json"
+    ],
+    "ingest": [
+      "dual_backup.json"
+    ],
+    "project-organizer": [],
+    "clone": [],
+    "nle-utilities": [],
+    "preferences": []
+  }
+}

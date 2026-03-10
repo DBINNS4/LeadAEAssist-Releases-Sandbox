@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-01T00:00:00.000Z",
+  "defaultKid": "k1",
+  "keys": {
+    "k1": {
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu/LuzQ5ObN6kkqBsxSl/\nO6rJa4lrbwae4rA9gjZpWHUvwnUSXup4hKXdZ3VCooOMgboVVLmKidjnUqRkXhqi\nrya5d9QFhBmOLdXdqPJmGR/XS4QdCfe3ZENoPVciyBji5IFbG5wGbwXGQLgbNKx8\n/uEamTTK/4+oaHFqIKpPNeJjvLN7USVd3nVXQfXMFLhA9dLAow8REDS62++1UkpP\nIG1PZn0NaI9rCi7dACtmYneXYqrQYiPfzBserxQx41cA9slK5HGHm5u9RN6KulEq\nupTaJBNgexjXjirhsi33oS9feNeEB7hUrRbWOzhkTCDLbKtgBcF7Iq2jWaCwY+f6\noQIDAQAB\n-----END PUBLIC KEY-----\n",
+      "status": "active"
+    }
+  }
+}

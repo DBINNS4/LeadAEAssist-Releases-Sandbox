@@ -1,0 +1,123 @@
+#!/bin/bash
+set -euo pipefail
+
+# build/pkg-scripts/postinstall
+# - Installs the CEP panel folder to the *console user's* CEP extensions folder.
+#   (Unsigned CEP panels + PlayerDebugMode must live in USER extensions dir.)
+# - Removes any system-level copy to prevent Premiere from loading the wrong install.
+
+EXTENSION_ID="com.leadae.panel"
+APP_NAME="LeadAEAssist.app"
+
+PKG_PATH="${1:-}"
+INSTALL_LOCATION="${2:-/Applications}"
+TARGET_VOLUME="${3:-/}"
+
+APP_PATH="${INSTALL_LOCATION}/${APP_NAME}"
+SRC_EXT="${APP_PATH}/Contents/Resources/cep/extensions/${EXTENSION_ID}"
+
+log() {
+  /bin/echo "[LeadAEAssist][postinstall] $*"
+  /usr/bin/logger -t "LeadAEAssist-postinstall" -- "$*" 2>/dev/null || true
+}
+
+copy_dir() {
+  local src="$1"
+  local dest="$2"
+  /bin/rm -rf "$dest" 2>/dev/null || true
+  /bin/mkdir -p "$(/usr/bin/dirname "$dest")"
+  /usr/bin/ditto "$src" "$dest"
+  /usr/bin/xattr -dr com.apple.quarantine "$dest" 2>/dev/null || true
+}
+
+log "PKG_PATH=$PKG_PATH"
+log "INSTALL_LOCATION=$INSTALL_LOCATION"
+log "TARGET_VOLUME=$TARGET_VOLUME"
+log "APP_PATH=$APP_PATH"
+log "SRC_EXT=$SRC_EXT"
+
+if [ ! -d "$SRC_EXT" ]; then
+  log "ERROR: Bundled CEP extension not found at $SRC_EXT"
+  exit 0
+fi
+
+# Determine the active console user (the one running Premiere)
+CONSOLE_USER="$(/usr/bin/stat -f%Su /dev/console 2>/dev/null || true)"
+if [[ -z "$CONSOLE_USER" || "$CONSOLE_USER" == "root" ]]; then
+  log "ERROR: No non-root console user detected. Cannot install unsigned CEP panel."
+  exit 0
+fi
+
+# Determine console user's home directory robustly (PKG scripts run as root; $HOME is unreliable)
+CONSOLE_HOME="$(/usr/bin/dscl . -read "/Users/$CONSOLE_USER" NFSHomeDirectory 2>/dev/null | /usr/bin/awk '{print $2}' || true)"
+if [[ -z "$CONSOLE_HOME" || ! -d "$CONSOLE_HOME" ]]; then
+  log "ERROR: Could not resolve home directory for user '$CONSOLE_USER' (got '$CONSOLE_HOME')"
+  exit 0
+fi
+
+USER_CEP_BASE="${CONSOLE_HOME}/Library/Application Support/Adobe/CEP/extensions"
+USER_DEST="${USER_CEP_BASE}/${EXTENSION_ID}"
+
+SYSTEM_CEP_BASE="${TARGET_VOLUME}/Library/Application Support/Adobe/CEP/extensions"
+SYSTEM_DEST="${SYSTEM_CEP_BASE}/${EXTENSION_ID}"
+
+BRIDGE_JSON="bridge.json"
+BRIDGE_BACKUP=""
+
+preserve_bridge_json() {
+  local source="$1"
+  if [ ! -f "$source/$BRIDGE_JSON" ]; then
+    return
+  fi
+  if [ ! -x /usr/bin/python3 ]; then
+    log "Python3 not available; skipping bridge.json preservation check."
+    return
+  fi
+  local token
+  token="$(/usr/bin/python3 - "$source/$BRIDGE_JSON" <<'PY'
+import json
+import sys
+path = sys.argv[1]
+try:
+    with open(path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    token = str(data.get('token', '')).strip()
+    if token:
+        print(token)
+except Exception:
+    pass
+PY
+)"
+  if [ -n "$token" ]; then
+    BRIDGE_BACKUP="$(/usr/bin/mktemp -t leadae-bridge.XXXXXX)"
+    /bin/cp "$source/$BRIDGE_JSON" "$BRIDGE_BACKUP"
+    log "Preserving existing CEP bridge.json with runtime token."
+  fi
+}
+
+restore_bridge_json() {
+  if [ -n "$BRIDGE_BACKUP" ] && [ -f "$BRIDGE_BACKUP" ]; then
+    /bin/cp "$BRIDGE_BACKUP" "$USER_DEST/$BRIDGE_JSON"
+    /bin/rm -f "$BRIDGE_BACKUP" 2>/dev/null || true
+  fi
+}
+
+# Remove any system-level install (unsigned extensions shouldn't be installed here)
+if [ -d "$SYSTEM_DEST" ]; then
+  log "Removing system-level CEP extension (unsigned): $SYSTEM_DEST"
+  /bin/rm -rf "$SYSTEM_DEST" 2>/dev/null || true
+fi
+
+# Install to user-level CEP folder
+log "Installing CEP panel for user '$CONSOLE_USER' into: $USER_DEST"
+ /bin/mkdir -p "$USER_CEP_BASE"
+preserve_bridge_json "$USER_DEST"
+copy_dir "$SRC_EXT" "$USER_DEST"
+restore_bridge_json
+
+# Ensure correct ownership/permissions
+/usr/sbin/chown -R "$CONSOLE_USER":staff "$USER_DEST" 2>/dev/null || true
+/bin/chmod -R a+rX "$USER_DEST" 2>/dev/null || true
+
+log "Done."
+exit 0

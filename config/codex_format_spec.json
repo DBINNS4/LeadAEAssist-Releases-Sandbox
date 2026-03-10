@@ -1,0 +1,3412 @@
+{
+  "formats": {
+    "prores_proxy": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "720x480",
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "320"
+    },
+    "prores_lt": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "720x480",
+        "1280x720",
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "prores_422": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "prores_422hq": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "512"
+    },
+    "prores_4444": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv444p10le",
+        "yuva444p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv444p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "512"
+    },
+    "prores_4444xq": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv444p10le",
+        "yuva444p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "4096x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv444p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "768"
+    },
+    "h264": {
+      "containers": [
+        "mp4",
+        "mov",
+        "mkv"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mp4",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "aac",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "192"
+    },
+    "h264_auto_gpu": {
+      "containers": [
+        "mp4",
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mp4",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "aac",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "192"
+    },
+    "h265": {
+      "containers": [
+        "mp4",
+        "mov",
+        "mkv"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12",
+        "p010le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mp4",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "aac",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "256"
+    },
+    "jpeg2000": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv444p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "512"
+    },
+    "ffv1": {
+      "containers": [
+        "mkv"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p",
+        "yuv444p",
+        "gray",
+        "bgra",
+        "rgb48le",
+        "yuv420p10le",
+        "yuv422p10le",
+        "yuv444p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "flac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mkv",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "512"
+    },
+    "mjpeg": {
+      "containers": [
+        "mov",
+        "avi"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuvj422p"
+      ],
+      "colorRanges": [
+        "Limited"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuvj422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "320"
+    },
+    "dnxhd": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "cfhd": {
+      "containers": [
+        "mov",
+        "avi"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "speedhq": {
+      "containers": [
+        "mov",
+        "avi"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p",
+        "yuv444p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "v210": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le",
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "utvideo": {
+      "containers": [
+        "mkv",
+        "avi"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p",
+        "yuv444p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le",
+        "flac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mkv",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "flac",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "512"
+    },
+    "magicyuv": {
+      "containers": [
+        "avi",
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "2048x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p",
+        "yuv444p",
+        "gray"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s24le",
+        "pcm_s16le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "48000",
+        "44100"
+      ],
+      "defaultContainer": "avi",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "preserve",
+      "defaultSampleRate": "48000"
+    },
+    "huffyuv": {
+      "containers": [
+        "avi"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "rgb24",
+        "bgra"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "avi",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "320"
+    },
+    "ffvhuff": {
+      "containers": [
+        "avi"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p",
+        "yuv444p",
+        "gray",
+        "rgb24",
+        "bgra",
+        "yuv420p10le",
+        "yuv422p10le",
+        "yuv444p10le",
+        "gbrp10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "avi",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "320"
+    },
+    "xdcam_hd35": {
+      "containers": [
+        "mxf",
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1440x1080"
+      ],
+      "frameRates": [
+        "29.97",
+        "29.97df",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuv420p"
+      ],
+      "colorRanges": [
+        "Limited"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mxf",
+      "defaultResolution": "1440x1080",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "interlaced_tff",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "xdcam_hd50": {
+      "containers": [
+        "mxf",
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "29.97",
+        "29.97df",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited"
+      ],
+      "fieldOrders": [
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mxf",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "interlaced_tff",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "xavc_l_1080p": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12"
+      ],
+      "colorRanges": [
+        "Limited"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "xavc_i_4k": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12"
+      ],
+      "colorRanges": [
+        "Limited"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "xavc_s": {
+      "containers": [
+        "mp4",
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "nv12"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "aac",
+        "alac"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo"
+      ],
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "defaultContainer": "mp4",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv420p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "aac",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "192"
+    },
+    "uncompressed_yuv": {
+      "containers": [
+        "mov",
+        "avi"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "yuv420p",
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "768"
+    },
+    "uncompressed_rgb": {
+      "containers": [
+        "mov",
+        "avi"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "rgb24",
+        "rgba"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "rgb24",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s16le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "768"
+    },
+    "png_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "rgba",
+        "rgb24"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "rgba",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "exr_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "gbrapf32le",
+        "gbrpf32le",
+        "grayf32le"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "4096x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "gbrapf32le",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "tiff_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "rgb24",
+        "rgba"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "3840x2160",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "rgb24",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "dpx_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "rgb24",
+        "rgb48le"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "rgb24",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "tga_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080",
+        "3840x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "bgra",
+        "bgr24",
+        "rgb555le",
+        "gray",
+        "pal8"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "bgra",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "image_sequence": {
+      "containers": [
+        "image_sequence"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30"
+      ],
+      "pixelFormats": [
+        "rgb24"
+      ],
+      "colorRanges": [
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [],
+      "channelOptions": [],
+      "sampleRates": [],
+      "defaultContainer": "image_sequence",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "rgb24",
+      "defaultColorRange": "Full",
+      "defaultFieldOrder": "progressive"
+    },
+    "dnxhr_444": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv444p10le",
+        "gbrp10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv444p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhr_hq": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhr_hqx": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhr_lb": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhr_sq": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080",
+        "3840x2160",
+        "4096x2160"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "30",
+        "50",
+        "59.94",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_110": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_115": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_120": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "25",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_145": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_175": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_175x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_185": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "25",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_185x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "25",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_220": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive",
+        "interlaced_tff",
+        "interlaced_bff"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_220x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_240": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "50",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_290": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "59.94",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_36": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_365": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "50",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_365x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "50",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_440": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "59.94",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_440x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "59.94",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_45": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1920x1080",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_60": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_75": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "29.97",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_90": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720",
+        "1920x1080"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    },
+    "dnxhd_90x": {
+      "containers": [
+        "mov"
+      ],
+      "resolutions": [
+        "1280x720"
+      ],
+      "frameRates": [
+        "23.976",
+        "24",
+        "25",
+        "29.97",
+        "29.97df",
+        "30",
+        "50",
+        "59.94",
+        "59.94df",
+        "60"
+      ],
+      "pixelFormats": [
+        "yuv422p",
+        "yuv422p10le"
+      ],
+      "colorRanges": [
+        "Limited",
+        "Full"
+      ],
+      "fieldOrders": [
+        "progressive"
+      ],
+      "audio": [
+        "pcm_s16le",
+        "pcm_s24le",
+        "pcm_s32le"
+      ],
+      "channelOptions": [
+        "preserve",
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "sampleRates": [
+        "48000"
+      ],
+      "defaultContainer": "mov",
+      "defaultResolution": "1280x720",
+      "defaultFrameRate": "23.976",
+      "defaultPixelFormat": "yuv422p10le",
+      "defaultColorRange": "Limited",
+      "defaultFieldOrder": "progressive",
+      "defaultAudio": "pcm_s24le",
+      "defaultChannels": "stereo",
+      "defaultSampleRate": "48000",
+      "defaultAudioBitrate": "384"
+    }
+  },
+  "audio": {
+    "pcm_s16le": {
+      "sampleRates": [
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo"
+      ],
+      "containers": [
+        "mov",
+        "mxf",
+        "avi",
+        "mkv"
+      ]
+    },
+    "pcm_s24le": {
+      "sampleRates": [
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "containers": [
+        "mov",
+        "mxf",
+        "avi",
+        "mkv"
+      ]
+    },
+    "pcm_s32le": {
+      "sampleRates": [
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "containers": [
+        "mov",
+        "mxf",
+        "avi",
+        "mkv"
+      ]
+    },
+    "aac": {
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "containers": [
+        "mp4",
+        "mov",
+        "mkv"
+      ]
+    },
+    "alac": {
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "containers": [
+        "mp4",
+        "mov",
+        "mkv"
+      ]
+    },
+    "flac": {
+      "sampleRates": [
+        "44100",
+        "48000",
+        "96000"
+      ],
+      "channels": [
+        "mono",
+        "stereo",
+        "5.1",
+        "7.1"
+      ],
+      "containers": [
+        "mkv",
+        "mov"
+      ]
+    },
+    "ac3": {
+      "sampleRates": [
+        "48000"
+      ],
+      "channels": [
+        "stereo",
+        "5.1"
+      ],
+      "containers": [
+        "mkv",
+        "mxf",
+        "mov"
+      ]
+    },
+    "eac3": {
+      "sampleRates": [
+        "48000"
+      ],
+      "channels": [
+        "5.1"
+      ],
+      "containers": [
+        "mkv"
+      ]
+    },
+    "opus": {
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo"
+      ],
+      "containers": [
+        "webm",
+        "mkv"
+      ]
+    },
+    "vorbis": {
+      "sampleRates": [
+        "44100",
+        "48000"
+      ],
+      "channels": [
+        "mono",
+        "stereo"
+      ],
+      "containers": [
+        "webm",
+        "mkv"
+      ]
+    }
+  }
+}

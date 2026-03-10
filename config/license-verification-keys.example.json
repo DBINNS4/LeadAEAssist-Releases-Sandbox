@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-01T00:00:00.000Z",
+  "defaultKid": "k-current",
+  "keys": {
+    "k-previous": {
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\n<OLD_PUBLIC_KEY_PEM>\n-----END PUBLIC KEY-----\n",
+      "status": "deprecated",
+      "acceptUntil": "2026-03-01T00:00:00.000Z"
+    },
+    "k-current": {
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\n<CURRENT_PUBLIC_KEY_PEM>\n-----END PUBLIC KEY-----\n",
+      "status": "active"
+    }
+  }
+}

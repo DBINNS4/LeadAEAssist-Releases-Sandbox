@@ -1,0 +1,9 @@
+{
+  "entitlementUrl": "https://YOUR-FLY-APP.fly.dev",
+  "paddle": {
+    "env": "sandbox",
+    "clientToken": "test_xxxxx",
+    "priceMonthly": "pri_xxxxx",
+    "priceYearly": "pri_xxxxx"
+  }
+}

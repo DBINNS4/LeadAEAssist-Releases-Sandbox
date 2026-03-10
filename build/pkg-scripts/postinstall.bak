@@ -1,0 +1,66 @@
+#!/bin/bash
+set -euo pipefail
+
+# build/pkg-scripts/postinstall
+# - Installs the CEP panel folder
+# - Enables CEP PlayerDebugMode for the active console user (so Premiere loads unsigned CEP folders)
+
+EXTENSION_ID="com.leadae.panel"
+APP_NAME="LeadAEAssist.app"
+
+PKG_PATH="${1:-}"
+INSTALL_LOCATION="${2:-/Applications}"
+TARGET_VOLUME="${3:-/}"
+
+APP_PATH="${INSTALL_LOCATION}/${APP_NAME}"
+SRC_EXT="${APP_PATH}/Contents/Resources/cep/extensions/${EXTENSION_ID}"
+
+log() {
+  /bin/echo "[LeadAEAssist][postinstall] $*"
+  /usr/bin/logger -t "LeadAEAssist-postinstall" -- "$*" 2>/dev/null || true
+}
+
+copy_dir() {
+  local src="$1"
+  local dest="$2"
+  /bin/rm -rf "$dest" || true
+  /bin/mkdir -p "$(/usr/bin/dirname "$dest")"
+  /usr/bin/ditto "$src" "$dest"
+  /usr/bin/xattr -dr com.apple.quarantine "$dest" 2>/dev/null || true
+}
+
+log "PKG_PATH=$PKG_PATH"
+log "INSTALL_LOCATION=$INSTALL_LOCATION"
+log "TARGET_VOLUME=$TARGET_VOLUME"
+log "APP_PATH=$APP_PATH"
+log "SRC_EXT=$SRC_EXT"
+
+if [ ! -d "$SRC_EXT" ]; then
+  log "ERROR: Bundled CEP extension not found at $SRC_EXT"
+  exit 0
+fi
+
+# Install system-wide CEP panel (works for all users)
+SYSTEM_CEP_BASE="${TARGET_VOLUME}/Library/Application Support/Adobe/CEP/extensions"
+SYSTEM_DEST="${SYSTEM_CEP_BASE}/${EXTENSION_ID}"
+
+log "Installing CEP panel system-wide to: $SYSTEM_DEST"
+ /bin/mkdir -p "$SYSTEM_CEP_BASE"
+copy_dir "$SRC_EXT" "$SYSTEM_DEST"
+ /usr/sbin/chown -R root:wheel "$SYSTEM_DEST" 2>/dev/null || true
+ /bin/chmod -R a+rX "$SYSTEM_DEST" 2>/dev/null || true
+
+# Enable PlayerDebugMode for the active GUI user (NOT root)
+CONSOLE_USER="$(/usr/bin/stat -f%Su /dev/console 2>/dev/null || true)"
+if [[ -n "$CONSOLE_USER" && "$CONSOLE_USER" != "root" ]]; then
+  log "Enabling CEP PlayerDebugMode for console user: $CONSOLE_USER"
+  /usr/bin/su -l "$CONSOLE_USER" -c "/usr/bin/defaults write com.adobe.CSXS.12 PlayerDebugMode 1"
+  /usr/bin/su -l "$CONSOLE_USER" -c "/usr/bin/defaults write com.adobe.CSXS.11 PlayerDebugMode 1" || true
+  /usr/bin/su -l "$CONSOLE_USER" -c "/usr/bin/defaults write com.adobe.CSXS.10 PlayerDebugMode 1" || true
+  /usr/bin/killall -u "$CONSOLE_USER" cfprefsd 2>/dev/null || true
+else
+  log "No non-root console user detected; skipping PlayerDebugMode enable"
+fi
+
+log "Done."
+exit 0
