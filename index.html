@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; connect-src 'self' http://127.0.0.1:* ws://127.0.0.1:* http://localhost:* ws://localhost:*; script-src 'self' file:; script-src-attr 'none'; style-src 'self' file:; style-src-elem 'self' file:; style-src-attr 'unsafe-inline'; img-src 'self' data: file: blob:; media-src 'self' file: blob:; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none';">
+  <!-- Keep file: for img-src/media-src because users open local files and those previews resolve to file:// URLs. -->
+  <title data-i18n="appTitle">LEAD AE - ASSIST</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+<div id="titlebar">
+  <div class="titlebar-account-btn">
+    <!-- From Uiverse.io by vinodjangid07 --> 
+    <button class="setting-btn">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar1"></span>
+    </button>
+  </div>
+  <!-- Center title (shown only when panels are open) -->
+  <div id="app-title-center" aria-hidden="true" data-i18n="appTitleCenter">ASSIST</div>
+
+  <div id="panel-toolbar-wrapper">
+    <div id="panel-toolbar"></div>
+
+    <!-- 🌙 Light/Dark Mode Toggle (lives WITH the panel toolbar region) -->
+    <div class="theme-toggle-titlebar-right">
+      <input type="checkbox" id="theme-toggle" class="l" title="Toggle Light/Dark Mode" data-i18n-attrs="title:toggleThemeTitle">
+    </div>
+  </div>
+</div>
+      <div class="title-divider"></div>
+      <div id="window-content">
+
+      <!-- ====================
+           📚 Sidebar Navigation
+           ==================== -->
+      <aside class="sidebar">
+
+      <ul>
+        <!-- 🔗 Panel Navigation Tabs -->
+        <li class="tab lae-navbtn" data-panel="speed-test">
+          <span class="lae-navbtn__text" data-i18n="speedTest">Speed Test</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-speed-test" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-speed-test" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="project-organizer">
+          <span class="lae-navbtn__text" data-i18n="projectOrganizer">Project Organizer</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-project-organizer" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-project-organizer" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="ingest">
+          <span class="lae-navbtn__text" data-i18n="ingest">Ingest</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-ingest" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-ingest" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="transcode">
+          <span class="lae-navbtn__text" data-i18n="transcode">Transcode</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-transcode" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-transcode" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="transcribe">
+          <span class="lae-navbtn__text" data-i18n="transcribe">Transcribe</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-transcribe" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-transcribe" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="adobe-utilities">
+          <span class="lae-navbtn__text" data-i18n="adobeAutomate">Adobe Automate</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-adobe-utilities" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-adobe-utilities" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="nle-utilities">
+          <span class="lae-navbtn__text" data-i18n="nleUtilities">NLE Utilities</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-nle-utilities" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-nle-utilities" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="log-viewer">
+          <span class="lae-navbtn__text" data-i18n="logViewer">Log Viewer</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-log-viewer" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-log-viewer" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+
+        <li class="tab lae-navbtn" data-panel="preferences">
+          <span class="lae-navbtn__text" data-i18n="preferences">Preferences</span>
+          <div class="lae-navtoggle" aria-hidden="true">
+            <input class="lae-navtoggle-check" id="lae-navtoggle-preferences" type="checkbox" tabindex="-1" aria-hidden="true">
+            <label for="lae-navtoggle-preferences" class="lae-navtoggle-label" aria-hidden="true">
+              <span class="lae-navtoggle-glyph" aria-hidden="true">
+                <div class="lae-navtoggle-line lae-navtoggle-line1"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line2"></div>
+                <div class="lae-navtoggle-line lae-navtoggle-line3"></div>
+              </span>
+            </label>
+          </div>
+        </li>
+      </ul>
+
+      <div class="sidebar-logo">
+        <a href="https://www.leadae.com" target="_blank">
+          <img src="images/lead_ae_logo.jpeg" alt="LEAD AE Logo" data-i18n-attrs="alt:leadAeLogoAlt">
+        </a>
+      </div>
+      </aside>
+
+<!-- ====================
+ 📋 Main Content Area
+ ==================== -->
+<main class="main-panel hidden">
+
+<!-- ==================== ADOBE AUTOMATE PANEL ==================== -->
+
+<div id="adobe-utilities" class="panel-section">
+  <div class="section">
+    <div id="adobe-lock-wrapper">
+      <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="adobe-utilities" title="Delete Preset" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="adobe-utilities-preset" name="adobe-utilities-preset">
+      </div>
+      <button id="save-config" data-i18n="save" class="button"></button>
+      <button id="load-config" data-i18n="load" class="button"></button>
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="automation-requirements-tooltip"></div>
+      </div>
+      <div class="reconnect-toolbar-button">
+        <div class="container">
+          <input type="checkbox" id="reconnect-checkbox" />
+          <label for="reconnect-checkbox" class="button" aria-label="Reconnect" title="Reconnect" data-i18n-attrs="title:reconnectTitle,aria-label:reconnectAriaLabel">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 6.27h-2.02A6 6 0 1 1 12 6a5.96 5.96 0 0 1 4.24 1.76L14 10h6V4l-2.35 2.35Z"
+                />
+              </svg>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- Input -->
+    <h3 data-i18n="adobeInput">Input</h3>
+    <div class="field-group adobe-input-row">
+      <button id="adobe-select-source" data-i18n="selectSource" class="button"></button>
+      <input type="text" id="adobe-source-path" data-i18n="noSourceSelected" placeholder="" readonly>
+    </div>
+
+    <!-- ▶ File & Metadata Grid (new) -->
+    <div class="file-info-scroll">
+      <div id="adobe-file-info" class="file-info-grid placeholder">
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFile"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFormat"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnResolution"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFps"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnAudio"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnDuration"></div>
+      </div>
+    </div>
+    <!-- Import Options -->
+    <details>
+      <summary><strong><span data-i18n="importOptions"></span></strong></summary>
+
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="adobe-import-premiere" checked><span data-i18n="importIntoPremiere"></span></label>
+        <label><input type="checkbox" id="adobe-generate-proxies"><span data-i18n="generateProxies"></span></label>
+        <label><input type="checkbox" id="adobe-create-bins" checked><span data-i18n="createPremiereBins"></span></label>
+      </div>
+
+      <!-- Proxy Settings -->
+      <div class="heading-with-tooltip">
+        <h3 data-i18n="proxySettings"></h3>
+        <div class="tooltip-container">
+          <div class="icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <div class="tooltip" id="proxy-settings-tooltip"></div>
+        </div>
+      </div>
+      <div class="proxy-settings-wrapper">
+        <div class="field-group horizontal adobe-path-row" id="adobe-proxy-dest-row">
+          <button id="adobe-select-proxy-dest" data-i18n="selectProxyDestination" class="button"></button>
+          <input type="text" id="adobe-proxy-dest-path" data-i18n="noProxyDestinationSelected" placeholder="" readonly>
+        </div>
+        <div class="field-group" id="adobe-proxy-preset-wrapper">
+          <div class="dropdown-wrapper full-width">
+            <div class="dropdown-display">
+              <input class="chosen-value" type="text" placeholder="" data-i18n="selectProxyPreset">
+              <span class="dropdown-arrow"></span>
+            </div>
+            <ul class="value-list"></ul>
+            <input type="hidden" id="adobe-proxy-preset" name="adobe-proxy-preset">
+          </div>
+          <div class="field-group horizontal" id="adobe-proxy-preset-controls">
+            <button id="load-proxy-preset" data-i18n="loadPreset" class="button"></button>
+            <button id="refresh-proxy-presets" data-i18n="refresh" class="button"></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unassigned Files -->
+      <h3 data-i18n="unassignedFiles"></h3>
+      <div class="field-group" id="source-file-selection">
+        <label data-i18n="dragFilesIntoBins"></label>
+        <ul id="source-file-list" class="draggable-list"></ul>
+      </div>
+
+      <!-- Bin Setup -->
+      <h3 data-i18n="binSetup"></h3>
+      <div class="field-group" id="adobe-bin-selection">
+        <label data-i18n="dragBinsToOrder"></label>
+        <ul id="adobe-bin-list" class="draggable-list"></ul>
+      </div>
+      <div class="field-group">
+        <input type="text" id="adobe-folder-name" data-i18n="newBinName" placeholder="">
+        <button id="add-folder" data-i18n="addBin" class="button"></button>
+        <button id="add-subfolder" data-i18n="addSubBin" class="button"></button>
+      </div>
+
+    </details>
+
+    <details>
+      <summary class="heading-with-tooltip"><span class="summary-label" data-i18n="verificationLogging"></span>
+        <div class="tooltip-container">
+          <div class="icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <div class="tooltip" id="verification-logging-tooltip"></div>
+        </div>
+      </summary>
+
+      <div class="checkbox-grid spaced-top">
+        <label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="verificationMethod">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="adobe-checksum-method" name="adobe-checksum-method">
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" id="adobe-save-log">
+          <span data-i18n="saveLog"></span>
+        </label>
+      </div>
+    </details>
+
+    <details data-webhook-section>
+      <summary><strong><span data-i18n="automationIntegration"></span></strong></summary>
+
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="adobe-enable-n8n"><span data-i18n="webhook"></span></label>
+        <label><input type="checkbox" id="adobe-n8n-allow-private"><span data-i18n="allowPrivateWebhookTargets"></span></label>
+        <label><input type="checkbox" id="adobe-n8n-log"><span data-i18n="sendLog"></span></label>
+      </div>
+      <input type="text" id="adobe-n8n-url" placeholder="" data-i18n="webhookUrlPlaceholderSimple">
+    </details>
+
+    <details>
+      <summary><strong><span data-i18n="ingestBehavior"></span></strong></summary>
+
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="adobe-parallel" checked><span data-i18n="parallelCopy"></span></label>
+        <label><input type="checkbox" id="adobe-auto-threads" checked><span data-i18n="autoThreads"></span></label>
+        <label><input type="checkbox" id="adobe-retry-failures"><span data-i18n="retryFailures"></span></label>
+      </div>
+
+      <div class="field-group horizontal">
+        <label><strong data-i18n="threads"></strong></label>
+        <span id="adobe-concurrency-value">3</span>
+        <input type="range" id="adobe-concurrency-slider" min="1" max="10">
+      </div>
+    </details>
+
+
+    
+
+    <!-- Output -->
+    <h3 data-i18n="adobeOutput">Output</h3>
+    <div class="field-group horizontal adobe-path-row">
+      <button id="adobe-select-dest" data-i18n="selectDestination" class="button"></button>
+      <input type="text" id="adobe-dest-path" data-i18n="noDestinationSelected" placeholder="" readonly>
+    </div>
+
+    <div class="field-group horizontal adobe-path-row">
+      <button id="adobe-select-backup" data-i18n="selectBackup" class="button"></button>
+      <input type="text" id="adobe-backup-path" placeholder="" data-i18n="noBackupSelected" readonly>
+    </div>
+
+    <div class="checkbox-grid spaced-top">
+      <label><input type="checkbox" id="adobe-dualCopy"><span data-i18n="enableBackup"></span></label>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Ingest Controls -->
+    <textarea id="adobe-notes" placeholder="" data-i18n="adobeAutomateNotes"></textarea>
+    <div class="field-group adobe-controls-row spaced-top" id="adobe-lock-controls">
+      <button id="start-adobe-utilities" data-i18n="automate" class="button"></button>
+      <button id="reset-utilities" class="btn-danger button" data-i18n="reset"></button>
+      <button id="cancel-adobe-utilities" class="btn-danger button" data-i18n="cancel">Cancel</button>
+
+      <!-- Spacer slot (matches the Watch Mode layout in other panels; keeps spacing stable) -->
+      <div class="watch-eyes-slot" aria-hidden="true"></div>
+
+      <!-- Progress bar + percent -->
+      <div id="loader-inline">
+        <progress id="adobe-progress" value="0" max="100"></progress>
+        <output for="adobe-progress"></output>
+      </div>
+
+      <!-- ✅ Hamster Wheel (right aligned) -->
+      <div id="cep-job-status">
+        <div class="wheel-and-hamster"></div>
+      </div>
+
+
+    </div>
+    </div>
+
+    <ul id="cep-task-list" aria-live="polite"></ul>
+    <h3><span data-i18n="summary"></span></h3>
+    <textarea id="job-preview-box" class="status-log lae-summary" aria-label="Summary" placeholder="Summary will appear here." data-i18n-attrs="aria-label:summary,placeholder:summaryPlaceholder" readonly rows="1"></textarea>
+
+    <!-- Hide Log toggle (under Summary, left-aligned) -->
+    <div class="panel-log-toggle" id="adobe-hide-log-toggle">
+      <label class="checkbox-label">
+        <input type="checkbox" id="adobe-hide-log" checked>
+        <span data-i18n="hideLogWindow">Hide log window</span>
+      </label>
+    </div>
+
+    <!-- Adobe Automate log output -->
+    <pre id="adobe-log-window" class="status-log panel-log-output" role="log" aria-live="polite" aria-label="Adobe Automate status log" data-i18n-attrs="aria-label:adobeUtilitiesStatusLogAriaLabel"><span class="lae-placeholder" data-i18n="logsWillAppearHere">Logs will appear here...</span></pre>
+  </div>
+</div>
+
+  <!-- ==================== INGEST PANEL ==================== -->
+
+<div id="ingest" class="panel-section">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="ingest" title="Delete Preset" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="ingest-preset" name="ingest-preset">
+        <select id="ingest-preset-fallback" name="ingest-preset-fallback" hidden></select>
+      </div>
+      <button id="ingest-save-config" data-i18n="save" class="button"></button>
+      <button id="ingest-load-config" data-i18n="load" class="button"></button>
+
+      <!-- Ingest panel overview tooltip (top-right, like Adobe Automate) -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="ingest-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <div id="ingest-lock-wrapper">
+
+      <!-- Input -->
+      <h3 data-i18n="ingestInput">Input</h3>
+      <div class="field-group horizontal ingest-path-row">
+        <button id="select-source" data-i18n="selectSource" class="button"></button>
+        <input type="text" id="source-path" placeholder="" data-i18n="noSourceSelected" readonly>
+      </div>
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="enable-clone"><span data-i18n="cloneMode">Clone Mode</span></label>
+      </div>
+
+      <!-- Clone Section (revealed when enabled) -->
+      <div id="clone-options" class="clone-options spaced-top">
+        <h3><span data-i18n="folderFilters"></span></h3>
+        <div class="field-group horizontal">
+          <input type="text" id="clone-folder-filter" placeholder="" data-i18n="filterFoldersPlaceholder">
+          <label><input type="checkbox" id="clone-select-all-folders"><span data-i18n="selectAll"></span></label>
+          <label><input type="checkbox" id="clone-show-file-count"><span data-i18n="showFileCount"></span></label>
+
+          <!-- Clone Mode tooltip - same positioning style as Verification & Logging -->
+          <div class="tooltip-container clone-mode-tooltip-container">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+              </svg>
+            </div>
+            <div class="tooltip" id="clone-mode-tooltip"></div>
+          </div>
+        </div>
+        <div id="clone-folder-tree" class="status-log folder-tree"><span data-i18n="folderTreePlaceholder"></span></div>
+      </div>
+
+<!-- File Handling Options -->
+<details>
+  <summary><strong><span data-i18n="fileHandlingOptions"></span></strong></summary>
+
+  <div class="checkbox-grid spaced-top ingest-file-handling-grid">
+    <!-- Row 1 -->
+    <label><input type="checkbox" id="skip-duplicates" checked><span data-i18n="skipDuplicates"></span></label>
+    <label><input type="checkbox" id="flattenStructure"><span data-i18n="flattenStructure"></span></label>
+    <div class="ingest-grid-spacer" aria-hidden="true"></div>
+
+    <!-- Row 2 -->
+    <label><input type="checkbox" id="include-cache"><span data-i18n="includeCache"></span></label>
+    <label><input type="checkbox" id="include-hidden-files"><span data-i18n="includeHiddenFiles"></span></label>
+    <div class="ingest-grid-spacer" aria-hidden="true"></div>
+  </div>
+
+  <div class="field-group vertical-stack">
+    <label for="filter-include" data-i18n="includeExtensions"></label>
+    <input type="text" id="filter-include" placeholder=".mov,.mp4,.wav" data-i18n-attrs="placeholder:includeExtensionsPlaceholder">
+    <label for="filter-exclude" data-i18n="excludeExtensions"></label>
+    <input type="text" id="filter-exclude" placeholder=".tmp,.db,.DS_Store" data-i18n-attrs="placeholder:excludeExtensionsPlaceholder">
+  </div>
+
+</details>
+
+<details>
+  <summary class="heading-with-tooltip"><span class="summary-label" data-i18n="verificationLogging"></span>
+    <div class="tooltip-container">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="8"></line>
+        </svg>
+      </div>
+      <div class="tooltip" id="ingest-verification-logging-tooltip"></div>
+    </div>
+  </summary>
+
+  <div class="checkbox-grid spaced-top">
+    <label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="verificationMethod">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="checksum-method" name="checksum-method">
+      </div>
+    </label>
+
+    <label>
+      <input type="checkbox" id="saveLog">
+      <span data-i18n="saveLog"></span>
+    </label>
+
+  </div>
+
+</details>
+
+<!-- Ingest Behavior -->
+<details data-webhook-section>
+  <summary><strong><span data-i18n="automationIntegration"></span></strong></summary>
+
+  <div class="checkbox-grid spaced-top">
+    <label><input type="checkbox" id="enable-n8n"><span data-i18n="webhook"></span></label>
+    <label><input type="checkbox" id="n8n-allow-private"><span data-i18n="allowPrivateWebhookTargets"></span></label>
+    <label><input type="checkbox" id="n8n-log"><span data-i18n="sendLog"></span></label>
+  </div>
+  <input type="text" id="n8n-url" placeholder="" data-i18n="webhookUrlPlaceholderSimple">
+
+</details>
+
+<!-- Ingest Behavior -->
+<details>
+  <summary><strong><span data-i18n="ingestBehavior"></span></strong></summary>
+<div class="checkbox-grid spaced-top">
+  <label><input type="checkbox" id="ingest-parallel" checked><span data-i18n="parallelCopy"></span></label>
+  <label><input type="checkbox" id="ingest-auto-threads" checked><span data-i18n="autoThreads"></span></label>
+  <label><input type="checkbox" id="ingest-retry-failures"><span data-i18n="retryFailures"></span></label>
+</div>
+<div class="field-group horizontal">
+  <label><strong data-i18n="threads"></strong></label>
+  <span id="concurrency-value">3</span>
+  <input type="range" id="concurrency-slider" min="1" max="10">
+</div>
+
+</details>
+
+<!-- Watch Mode -->
+<details>
+  <summary><strong><span data-i18n="watchMode"></span></strong></summary>
+
+  <div class="checkbox-grid spaced-top">
+    <label><input type="checkbox" id="enable-watch-mode"><span data-i18n="enableWatchMode"></span></label>
+    <label data-i18n-attrs="title:watchModeProcessExistingTitle">
+      <input type="checkbox" id="ingest-watch-process-existing">
+      <span data-i18n="watchModeProcessExisting"></span>
+    </label>
+  </div>
+</details>
+
+      <!-- Output -->
+      <h3 data-i18n="ingestOutput">Output</h3>
+      <div class="field-group horizontal ingest-path-row">
+        <button id="select-destination" data-i18n="selectDestination" class="button"></button>
+        <input type="text" id="destination-path" placeholder="" data-i18n="noDestinationSelected" readonly>
+      </div>
+      <div class="field-group horizontal ingest-path-row">
+        <button id="select-backup" data-i18n="selectBackup" class="button"></button>
+        <input type="text" id="backup-path" placeholder="" data-i18n="noBackupSelected" readonly>
+      </div>
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="dualCopy"><span data-i18n="enableBackup"></span></label>
+        <label><input type="checkbox" id="autoFolder"><span data-i18n="autoCreateFolder"></span></label>
+      </div>
+    </div> <!-- end of ingest-lock-wrapper -->
+
+    <textarea id="notes" placeholder="" data-i18n="ingestNotes"></textarea>
+
+    <!-- Controls -->
+    <div id="ingest-lock-controls" class="field-group adobe-controls-row spaced-top">
+      <button id="start-ingest" data-i18n="startIngest" class="button"></button>
+      <button id="reset-ingest-fields" class="btn-danger button" data-i18n="resetIngest"></button>
+      <button id="cancel-ingest" class="btn-danger button" data-i18n="cancelIngest"></button>
+
+      <!-- Watch Mode eyes (visible only while actively watching) -->
+      <div class="watch-eyes-slot">
+        <span id="ingest-watch-eyes" class="watch-eyes" aria-hidden="true" title="Watch Mode active" data-i18n-attrs="title:watchModeActiveTitle">
+          <span class="watch-eyes__loader" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <!-- Inline loader (same placement as Adobe Automate) -->
+      <div id="ingest-loader-inline" aria-hidden="true">
+        <progress id="ingest-progress" max="100" value="0"></progress>
+        <output for="ingest-progress" id="ingest-progress-output"></output>
+      </div>
+
+      <!-- Hamster hard-right -->
+      <div id="ingest-job-status" aria-hidden="true">
+        <div class="wheel-and-hamster"></div>
+      </div>
+    </div>
+
+    <!-- Job Preview -->
+    <h3><span data-i18n="summary"></span></h3>
+    <textarea id="ingest-job-preview-box" class="status-log lae-summary" aria-label="Summary" placeholder="Summary will appear here." data-i18n-attrs="aria-label:summary,placeholder:summaryPlaceholder" readonly rows="1"></textarea>
+
+    <!-- Hide Log toggle (under Summary, left-aligned) -->
+    <div class="panel-log-toggle" id="ingest-hide-log-toggle">
+      <label class="checkbox-label">
+        <input type="checkbox" id="ingest-hide-log" checked>
+        <span data-i18n="hideLogWindow">Hide log window</span>
+      </label>
+    </div>
+
+    <!-- Inline Status / Errors (panel-scoped) -->
+    <pre id="log-output" class="status-log panel-log-output" role="log" aria-live="polite" aria-label="Ingest status log" data-i18n-attrs="aria-label:ingestStatusLogAriaLabel"><span class="lae-placeholder" data-i18n="logsWillAppearHere">Logs will appear here...</span></pre>
+
+  </div>
+</div>
+
+<!-- ====================
+   TRANSCODE PANEL
+==================== -->
+<div id="transcode" class="panel-section">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="transcode" title="Delete Preset" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="transcode-preset" name="transcode-preset">
+      </div>
+      <button id="saveTranscodePreset" data-i18n="save" class="button"></button>
+      <button id="loadTranscodePreset" data-i18n="load" class="button"></button>
+
+      <!-- Transcode panel overview tooltip (top-right, like Ingest/Adobe) -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="transcode-overview-tooltip"></div>
+      </div>
+    </div>
+
+      <div id="transcode-lock-wrapper">
+
+    <!-- Input -->
+    <h3 data-i18n="transcodeInput">Input</h3>
+    <div class="field-group transcode-input-row">
+        <button id="selectInputFiles" data-i18n="selectInputFiles" class="button"></button>
+      <textarea id="inputFiles" placeholder="" data-i18n="noInputSelected" readonly rows="1"></textarea>
+      <!-- Watch Mode: swap textarea for a standard single-line path input (matches Ingest panel style) -->
+      <input type="text" id="transcode-watch-folder-path" placeholder="" data-i18n="transcodeWatchFolderPlaceholder" readonly class="hidden">
+    </div>
+    <div class="file-info-scroll">
+      <div id="transcode-file-info" class="file-info-grid placeholder">
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFile"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFormat"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnResolution"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFps"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnAudio"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnDuration"></div>
+      </div>
+    </div>
+<details id="transcode-video-details">
+    <summary>
+    <strong><span data-i18n="videoSettings"></span></strong>
+  </summary>
+
+  <!-- Video option flags: align with the 3-column checkbox rhythm used elsewhere -->
+  <div class="checkbox-grid spaced-top">
+    <label class="checkbox-label" for="transcode-match-source">
+      <input type="checkbox" id="transcode-match-source">
+      <span data-i18n="matchSource"></span>
+    </label>
+
+    <label class="checkbox-label" for="transcode-preserve-metadata">
+      <input type="checkbox" id="transcode-preserve-metadata" checked>
+      <span data-i18n="preserveMetadata"></span>
+    </label>
+  </div>
+
+  <div class="video-grid-2col">
+    <!-- Column 1 -->
+    <div class="form-item">
+      <label for="outputFormat" data-i18n="outputFormat"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Output Format" data-i18n-attrs="placeholder:transcodeOutputFormatPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="outputFormat" name="outputFormat">
+      </div>
+    </div>
+    <div class="form-item">
+      <label for="containerFormat" data-i18n="containerFormat"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Container Format" data-i18n-attrs="placeholder:transcodeContainerFormatPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="containerFormat" name="containerFormat">
+      </div>
+    </div>
+    <!-- Column 2 -->
+    <div class="form-item">
+      <label for="resolution" data-i18n="resolution"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Resolution" data-i18n-attrs="placeholder:transcodeResolutionPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="resolution" name="resolution">
+      </div>
+    </div>
+    <div class="form-item">
+      <label for="frameRate" data-i18n="frameRate"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Frame Rate" data-i18n-attrs="placeholder:transcodeFrameRatePlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="frameRate" name="frameRate">
+      </div>
+    </div>
+    <!-- Column 3 -->
+    <div class="form-item">
+      <label for="pixelFormat" data-i18n="pixelFormat"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Pixel Format" data-i18n-attrs="placeholder:transcodePixelFormatPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="pixelFormat" name="pixelFormat">
+      </div>
+    </div>
+    <div class="form-item">
+      <label for="colorRange" data-i18n="colorRange"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Color Range" data-i18n-attrs="placeholder:transcodeColorRangePlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="colorRange" name="colorRange">
+      </div>
+    </div>
+    <div class="form-item">
+      <label data-i18n="lut"></label>
+      <div id="transcode-lut-drop" class="lut-dropzone" role="button" tabindex="0" aria-label="Drop LUT (.cube/.3dl/.dat) or click to select" data-i18n-attrs="aria-label:transcodeLutDropPrompt">
+        <input id="transcode-lut-display" class="chosen-value" type="text" placeholder="Drop LUT (.cube/.3dl/.dat) or click" data-i18n-attrs="placeholder:transcodeLutDropPrompt" readonly>
+        <input type="hidden" id="transcode-lut-path">
+      </div>
+    </div>
+    <div class="form-item">
+      <label for="fieldOrder" data-i18n="fieldOrder"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Field Order" data-i18n-attrs="placeholder:transcodeFieldOrderPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="fieldOrder" name="fieldOrder">
+      </div>
+    </div>
+
+  </div>
+
+</details>
+
+    <details id="transcode-audio-details">
+      <summary class="heading-with-tooltip"><span class="summary-label" data-i18n="audioSettings"></span>
+        <div class="tooltip-container">
+          <div class="icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <div class="tooltip" id="transcode-audio-tooltip"></div>
+        </div>
+      </summary>
+
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="transcode-audio-only"><span data-i18n="audioOnly"></span></label>
+        <label><input type="checkbox" id="normalizeAudio"><span data-i18n="normalizeAudio"></span></label>
+      </div>
+
+      <div class="video-grid-3col">
+        <div class="form-item">
+          <label for="audioCodec" data-i18n="audioCodec"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="Audio Codec" data-i18n-attrs="placeholder:transcodeAudioCodecPlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="audioCodec" name="audioCodec">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="channels" data-i18n="channels"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="Channels" data-i18n-attrs="placeholder:transcodeChannelsPlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="channels" name="channels">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="sampleRate" data-i18n="sampleRate"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="Sample Rate" data-i18n-attrs="placeholder:transcodeSampleRatePlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="sampleRate" name="sampleRate">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="audioBitrate" data-i18n="audioBitrate"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="Audio Bitrate" data-i18n-attrs="placeholder:transcodeAudioBitratePlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="audioBitrate" name="audioBitrate">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="audioDelay" data-i18n="audioDelay"></label>
+          <input type="number" id="audioDelay" placeholder="e.g. 50" class="compact" min="0" step="1" data-i18n-attrs="placeholder:transcodeAudioDelayPlaceholder">
+        </div>
+
+      </div>
+
+      <!-- Caption sidecar attach (MCC/SCC → MCC) -->
+      <div class="field-group transcode-caption-row spaced-top">
+        <button id="transcode-select-captions" class="button" data-i18n="transcodeAttachCaptionsButton">Attach Captions (MCC/SCC)</button>
+
+        <input
+          id="transcode-captions-display"
+          class="chosen-value"
+          type="text"
+          placeholder=""
+          data-i18n-attrs="placeholder:transcodeCaptionsDisplayPlaceholder"
+          readonly
+        >
+
+        <button
+          id="transcode-clear-captions"
+          class="delete-preset-btn"
+          data-i18n-attrs="title:transcodeClearCaptionAttachmentTitle"
+          disabled
+        >🗑️</button>
+
+        <input type="hidden" id="transcode-captions-path">
+      </div>
+
+      <div class="field-hint" data-i18n="transcodeCaptionSidecarHint">
+        Attach an .mcc or .scc file. SCC will be converted to MCC automatically before export.
+      </div>
+      <div id="transcode-caption-lock-notice" class="field-hint" hidden aria-live="polite"></div>
+    </details>
+
+    <details>
+      <summary class="heading-with-tooltip"><span class="summary-label" data-i18n="verificationLogging"></span>
+        <div class="tooltip-container">
+          <div class="icon">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+          </div>
+          <!-- Transcode-specific tooltip ID -->
+          <div class="tooltip" id="transcode-verification-tooltip"></div>
+        </div>
+      </summary>
+
+        <div class="checkbox-grid spaced-top">
+          <label>
+            <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="verificationMethod">
+            <ul class="value-list">
+                <li data-value="metadata" data-i18n="transcodeVerificationDurationFrame">Duration / Frame</li>
+                <li data-value="ssim_psnr" data-i18n="transcodeVerificationSsimPsnr">SSIM / PSNR</li>
+              </ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="transcode-verification-method" name="transcode-verification-method" value="metadata">
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" id="transcode-save-log">
+          <span data-i18n="transcodeSaveLog"></span>
+        </label>
+
+      </div>
+    </details>
+
+    <details data-webhook-section>
+      <summary><strong><span data-i18n="automationIntegration"></span></strong></summary>
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="transcode-enable-n8n"><span data-i18n="webhook"></span></label>
+        <label><input type="checkbox" id="transcode-n8n-allow-private"><span data-i18n="allowPrivateWebhookTargets"></span></label>
+        <label><input type="checkbox" id="transcode-n8n-log"><span data-i18n="sendLog"></span></label>
+      </div>
+      <input type="text" id="transcode-n8n-url" placeholder="" data-i18n="webhookUrlPlaceholderSimple">
+    </details>
+
+    <details id="transcode-watch-wrapper">
+      <summary><strong><span data-i18n="watchMode"></span></strong></summary>
+      <div class="checkbox-grid spaced-top">
+        <label><input type="checkbox" id="transcode-watch-mode"><span data-i18n="transcodeWatchMode"></span></label>
+        <label data-i18n-attrs="title:watchModeProcessExistingTitle">
+          <input type="checkbox" id="transcode-watch-process-existing">
+          <span data-i18n="watchModeProcessExisting"></span>
+        </label>
+      </div>
+    </details>
+
+    <!-- Output (moved to match panel rhythm: after Watch Mode, before Notes) -->
+    <h3 data-i18n="transcodeOutput">Output</h3>
+    <div class="field-group transcode-output-row">
+      <button id="selectOutput" data-i18n="selectOutput" class="button"></button>
+      <input type="text" id="outputPath" placeholder="" data-i18n="noOutputSelected" readonly>
+    </div>
+
+    <textarea id="transcode-notes" placeholder="" data-i18n="transcodeNotes"></textarea>
+
+    <div class="field-group adobe-controls-row spaced-top" id="transcode-controls-row">
+      <button id="startTranscode" data-i18n="startTranscode" class="button"></button>
+      <button id="resetTranscode" class="btn-danger button" data-i18n="resetTranscode"></button>
+      <button id="cancelTranscode" class="btn-danger button" data-i18n="cancelTranscode"></button>
+
+      <!-- Watch Mode eyes (visible only while actively watching) -->
+      <div class="watch-eyes-slot">
+        <span id="transcode-watch-eyes" class="watch-eyes" aria-hidden="true" title="Watch Mode active" data-i18n-attrs="title:watchModeActiveTitle">
+          <span class="watch-eyes__loader" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <div id="transcode-loader-inline">
+        <progress id="transcode-progress" max="100" value="0"></progress>
+        <output for="transcode-progress" id="transcode-progress-output"></output>
+      </div>
+      <div id="transcode-job-status" aria-hidden="true">
+        <div class="wheel-and-hamster"></div>
+      </div>
+    </div>
+
+    </div> <!-- end of transcode-lock-wrapper -->
+
+    <!-- Job Preview (matches Ingest/Adobe pattern; always shows all option states) -->
+    <h3><span data-i18n="summary"></span></h3>
+    <textarea id="transcode-job-preview-box" class="status-log lae-summary" aria-label="Summary" placeholder="Summary will appear here." data-i18n-attrs="aria-label:summary,placeholder:summaryPlaceholder" role="log" aria-live="polite" readonly rows="1"></textarea>
+
+    <!-- Hide Log toggle (under Summary, left-aligned) -->
+    <div class="panel-log-toggle" id="transcode-hide-log-toggle">
+      <label class="checkbox-label">
+        <input type="checkbox" id="transcode-hide-log" checked>
+        <span data-i18n="hideLogWindow">Hide log window</span>
+      </label>
+    </div>
+
+    <!-- Transcode log output (separate from inline status to avoid overwrites during long jobs) -->
+    <textarea id="transcode-log-output" class="status-log panel-log-output" role="log" aria-live="polite" readonly rows="8" data-i18n="logsWillAppearHere" data-i18n-attrs="aria-label:transcodeStatusLogAriaLabel"></textarea>
+
+  </div>
+</div>
+
+      <!-- =========================
+     PROJECT ORGANIZER PANEL
+     ========================= -->
+<div id="project-organizer" class="panel-section">
+  <div id="project-organizer-lock-wrapper" class="section">
+    <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="organizer" title="" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="organizer-preset" name="organizer-preset">
+      </div>
+      <button id="organizer-save-config" data-i18n="saveConfig" class="button"></button>
+      <button id="organizer-load-config" data-i18n="loadConfig" class="button"></button>
+
+      <!-- 🔹 Project Organizer overview tooltip - SAME POSITION AS INGEST/TRANSCODE -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="project-organizer-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <!-- Folder Selection Panel (50/50 split: left = naming + custom folder, right = drag label + list) -->
+    <div class="field-group" id="folder-selection">
+      <div class="organizer-folder-meta">
+        <div class="organizer-project-name">
+          <label for="root-folder-name"><span data-i18n="projectName"></span></label>
+          <input type="text" id="root-folder-name" placeholder="" data-i18n="rootFolderPlaceholder">
+        </div>
+
+        <!-- Custom Folder Input (same width as Project Name input; buttons BELOW) -->
+        <div class="field-group organizer-custom-folder vertical">
+          <label for="custom-folder-name"><span data-i18n="customFolder"></span></label>
+          <input type="text" id="custom-folder-name" placeholder="" data-i18n="customFolderName">
+          <div class="organizer-custom-folder-buttons">
+            <button id="add-custom-folder" data-i18n="addCustomFolder" class="button"></button>
+            <button id="organizer-add-subfolder" data-i18n="addSubfolder" class="button"></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="organizer-folder-list">
+        <label class="organizer-drag-label" data-i18n="dragFoldersToOrder"></label>
+        <ul id="folder-list" class="draggable-list"></ul>
+      </div>
+    </div>
+
+    <!-- Output -->
+    <h3 data-i18n="output"></h3>
+
+    <!-- Save Location Setup -->
+    <div class="field-group organizer-output-row">
+      <button id="select-output-location" data-i18n="selectOutputLocation" class="button"></button>
+      <input type="text" id="output-location-path" placeholder="" data-i18n="outputPath" readonly>
+    </div>
+
+    <div class="checkbox-row organizer-prepend-row">
+      <label class="organizer-prepend-label" for="prepend-numbers">
+        <input type="checkbox" id="prepend-numbers" checked>
+        <span data-i18n="prependNumbering"></span>
+      </label>
+    </div>
+
+    <!-- Generate / Reset / Hamster (same row) -->
+    <div id="project-organizer-controls-row" class="field-group adobe-controls-row">
+      <button id="generate-project-folders" data-i18n="generateProjectFolders" class="button"></button>
+      <button id="reset-project-organizer" class="btn-danger button" data-i18n="resetProjectOrganizer"></button>
+      <button id="cancel-project-organizer" class="btn-danger button" data-i18n="cancelProjectOrganizer"></button>
+      <div id="project-organizer-loader-inline">
+        <progress id="project-organizer-progress" max="100" value="0"></progress>
+        <output for="project-organizer-progress" id="project-organizer-progress-output"></output>
+      </div>
+
+      <!-- Hamster hard-right, same as other panels -->
+      <div id="project-organizer-job-status">
+        <div class="wheel-and-hamster"></div>
+      </div>
+    </div>
+        
+    <!-- Folder Summary -->
+    <h3><span data-i18n="summary"></span></h3>
+    <textarea id="project-summary" class="status-log lae-summary" aria-label="Summary" placeholder="Summary will appear here." data-i18n-attrs="aria-label:summary,placeholder:summaryPlaceholder" readonly rows="1"></textarea>
+
+  </div>
+</div>
+
+
+<!-- =========================
+     NLE UTILITIES PANEL
+     ========================= -->
+<div id="nle-utilities" class="panel-section">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="nle" title="Delete Preset" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="nle-utilities-preset" name="nle-utilities-preset">
+      </div>
+      <button id="nle-save-config" data-i18n="saveConfig" class="button"></button>
+      <button id="nle-load-config" data-i18n="loadConfig" class="button"></button>
+
+      <!-- 🔹 NLE Utilities overview tooltip (IN ROW, SAME POSITION AS OTHERS) -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="nle-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <!-- Avid Utilities -->
+  <details>
+    <summary><strong><span data-i18n="avidUtilities"></span></strong></summary>
+
+    <!-- Folder Selection -->
+    <div class="field-group">
+      <button id="avid-select-folder" data-i18n="avidSelectFolder" class="button"></button>
+      <input type="text" id="avid-folder-path" placeholder="" data-i18n="noAvidFolderSelected" readonly>
+    </div>
+
+    <!-- User Selection -->
+    <div class="field-group">
+      <label for="avid-user-select" data-i18n="avidUserLabel"></label>
+      <select id="avid-user-select">
+        <option value="" data-i18n="selectUser"></option>
+      </select>
+    </div>
+
+    <!-- Primary Buttons -->
+    <div class="field-group">
+      <button id="avid-delete-db" class="btn-danger button" data-i18n="avidDeleteDb" data-i18n-attrs="title:avidMxfFolderStructureTooltip"></button>
+      <button id="avid-reset-site" class="btn-danger button" data-i18n="avidResetSite"></button>
+      <button id="avid-reset-user" class="btn-danger button" data-i18n="avidResetUser"></button>
+    </div>
+
+    <!-- Secondary Action -->
+    <div class="field-group">
+      <button id="avid-rebuild-db" data-i18n="avidRebuildDb" data-i18n-attrs="title:avidMxfFolderStructureTooltip" class="button"></button>
+    </div>
+
+    <!-- Shared Checkboxes -->
+    <div class="field-group">
+      <label><input type="checkbox" id="avid-scan-subfolders"><span data-i18n="avidScanSubfolders"></span></label>
+      <label><input type="checkbox" id="avid-backup-settings"><span data-i18n="avidBackupSettings"></span></label>
+      <label><input type="checkbox" id="avid-show-counts"><span data-i18n="avidShowCounts"></span></label>
+      <label><input type="checkbox" id="avid-auto-rebuild"><span data-i18n="avidAutoRebuild"></span></label>
+    </div>
+
+    <!-- Summary Log -->
+    <div class="status-log lae-summary" id="avid-summary"><span data-i18n="summaryPlaceholder">Summary will appear here.</span></div>
+  </details>
+
+    <!-- Adobe Automate -->
+    <details>
+      <summary><strong><span data-i18n="adobeUtilities"></span></strong></summary>
+      
+      <div class="field-group">
+       <button id="adobe-select-folder" data-i18n="adobeSelectFolder" class="button"></button>
+       <input type="text" id="adobe-folder-path" placeholder="" data-i18n="noAdobeFolderSelected" readonly>
+     </div>
+
+      <!-- Cache and Autosave Controls -->
+      <div class="field-group">
+        <button id="adobe-clear-cache" class="btn-danger button" data-i18n="adobeClearCache"></button>
+        <button id="adobe-delete-autosaves" class="btn-danger button" data-i18n="adobeDeleteAutosaves"></button>
+        <button id="adobe-remove-previews" class="btn-danger button" data-i18n="adobeRemovePreviews"></button>
+      </div>
+
+      <!-- Cleanup Filters -->
+      <div class="field-group adobe-cleanup-filter-grid">
+        <label><input type="checkbox" id="adobe-skip-recent"><span data-i18n="adobeSkipRecent"></span></label>
+        <label><input type="checkbox" id="adobe-size-skip"><span data-i18n="adobeSkipLarge"></span></label>
+
+        <input type="number" id="adobe-age-days" placeholder="" data-i18n="adobeAgeDays" min="1">
+        <input type="number" id="adobe-size-mb" placeholder="" data-i18n="adobeSizeMb" min="1">
+      </div>
+
+      <div class="field-group">
+        <input type="text" id="adobe-media-cache-filter" placeholder="" data-i18n="adobeMediaCacheFilter">
+        <input type="text" id="adobe-media-cache-scope" placeholder="" data-i18n="adobeMediaCacheScope">
+      </div>
+
+    <div class="status-log lae-summary" id="adobe-summary"><span data-i18n="summaryPlaceholder">Summary will appear here.</span></div>
+    </details>
+
+    <!-- Full Panel Reset Button -->
+    <div class="field-group spaced-top">
+      <button id="reset-nle-utilities" class="btn-danger button" data-i18n="resetNleUtilities"></button>
+    </div>
+
+    <!-- ⚠️ Destructive actions warning -->
+    <div id="nle-destructive-warning" class="alert warning nle-destructive-warning" role="note">
+      <strong data-i18n="nleDestructiveWarningTitle">⚠️ Warning:</strong><br>
+      <span data-i18n="nleDestructiveWarningBody">The tools above can permanently delete or reset files in the selected folder (they do not go to Trash/Recycle Bin). Double-check the target path and any Scope/filters before running.</span>
+    </div>
+
+    <!-- NLE Utilities: AI Assistants (below reset button) -->
+    <div id="nle-utilities-assistants" class="nle-assistants-row">
+      <div class="nle-assist-container">
+          <a href="https://chatgpt.com/g/g-nb2UUpCxI-avid-media-composer" target="_blank" rel="noopener" class="nle-assist-button" id="btn-media-composer">
+            <span class="nle-assist-label" data-i18n="nleAssistMediaComposer">Media Composer</span>
+            <img src="images/OpenAI-black-monoblossom.png" alt="" class="nle-assist-logo" data-i18n-attrs="alt:nleAssistMediaComposerAlt">
+        </a>
+      </div>
+
+      <div class="nle-assist-container">
+        <a href="https://chatgpt.com/g/g-ifxhKCZmI-premiere-assistant" target="_blank" rel="noopener" class="nle-assist-button" id="btn-premiere">
+            <span class="nle-assist-label" data-i18n="nleAssistPremiere">Premiere</span>
+            <img src="images/OpenAI-black-monoblossom.png" alt="" class="nle-assist-logo" data-i18n-attrs="alt:nleAssistPremiereAlt">
+        </a>
+      </div>
+
+      <div class="nle-assist-container">
+        <a href="https://chatgpt.com/g/g-wJL3QLpQ5-davinci-resolve-18-6-wizard" target="_blank" rel="noopener" class="nle-assist-button" id="btn-resolve">
+            <span class="nle-assist-label" data-i18n="nleAssistResolve">Resolve</span>
+            <img src="images/OpenAI-black-monoblossom.png" alt="" class="nle-assist-logo" data-i18n-attrs="alt:nleAssistResolveAlt">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================
+     PREFERENCES PANEL
+     ======================== -->
+<div id="preferences" class="panel-section">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <!-- 🔹 Preferences overview tooltip -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="preferences-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <!-- General Preferences -->
+    <h3 data-i18n="preferencesGeneral">General</h3>
+
+    <div class="field-group checkbox-grid">
+      <label><input type="checkbox" id="offline-mode"><span data-i18n="enableOfflineMode"></span></label>
+    </div>
+    <div id="offline-mode-warning" class="field-hint" style="display:none" aria-live="polite"></div>
+
+    <!-- Theme -->
+    <h3 data-i18n="themeAppearance"></h3>
+    <div class="field-group horizontal">
+      <!-- Theme -->
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n-attrs="placeholder:themePlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="theme-select" name="theme-select">
+      </div>
+
+      <!-- Language -->
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n-attrs="placeholder:languagePlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="language-select" name="language-select">
+      </div>
+
+    </div>
+
+<!-- AI Settings -->
+<h3 data-i18n="aiSettings"></h3>
+<div class="field-group" id="api-key-field">
+  <label for="ai-api-key" data-i18n="aiApiKey"></label>
+  <input type="password" id="ai-api-key" placeholder="Enter your API key here...">
+</div>
+
+      <!-- Webhooks & Integration -->
+      <div id="webhook-section">
+        <h3 data-i18n="webhooksIntegration"></h3>
+        <div class="field-group">
+          <input type="text" id="webhook-url" data-i18n-attrs="placeholder:webhookUrlPlaceholder">
+          <div id="webhook-url-error" class="input-error" role="alert" aria-live="polite" hidden></div>
+        </div>
+
+      <div class="field-group checkbox-grid">
+          <label><input type="checkbox" id="webhook-logging"><span data-i18n="enableWebhookLogging"></span></label>
+          <label><input type="checkbox" id="webhook-only-fail"><span data-i18n="sendOnlyOnFailure"></span></label>
+        </div>
+      </div>
+
+      <!-- Advanced -->
+      <details id="preferences-advanced">
+        <summary><strong><span data-i18n="preferencesAdvanced">Advanced</span></strong></summary>
+
+        <!-- Diagnostics -->
+        <h3 data-i18n="preferencesDiagnostics">Diagnostics</h3>
+        <div class="field-group checkbox-grid">
+          <label><input type="checkbox" id="crash-reporting"><span data-i18n="enableCrashReporting">Enable crash reporting</span></label>
+        </div>
+
+        <!-- Updates -->
+        <h3 data-i18n="preferencesUpdates">Updates</h3>
+        <div class="checkbox-grid spaced-top">
+          <label>
+            <input type="checkbox" id="auto-update-check-on-launch">
+            <span data-i18n="autoUpdateCheckOnLaunch">Check for updates on launch</span>
+          </label>
+
+          <label>
+            <input type="checkbox" id="auto-update-auto-download">
+            <span data-i18n="autoUpdateAutoDownload">Automatically download updates</span>
+          </label>
+        </div>
+
+        <div class="field-group spaced-top">
+          <button id="check-updates-now" class="button" data-i18n="checkForUpdates">Check for Updates</button>
+          <button id="download-update-now" class="button" hidden data-i18n="downloadUpdate">Download</button>
+          <button id="install-update-now" class="button" hidden data-i18n="restartToInstall">Restart &amp; Install</button>
+        </div>
+
+        <progress id="update-download-progress" max="100" value="0" class="hidden"></progress>
+        <div id="update-status-text" class="muted"></div>
+
+        <!-- Storage & Maintenance -->
+        <h3 data-i18n="storageMaintenanceHeading">Storage &amp; Maintenance</h3>
+        <div class="field-group">
+          <div class="field-hint"><span data-i18n="tempFolderLabel">Temp folder:</span> <span id="temp-folder-path">—</span></div>
+          <div id="maintenance-status" class="field-hint" aria-live="polite"></div>
+        </div>
+
+        <div class="field-group horizontal">
+          <button id="open-temp-folder" class="button" data-i18n="openTempFolder">Open Temp Folder</button>
+          <button id="clear-temp-now" class="btn-danger button" data-i18n="clearTempNow">Clear Temp Now</button>
+          <button id="clear-cache-now" class="btn-danger button" data-i18n="clearCacheNow">Clear Cache Now</button>
+        </div>
+
+        <div class="field-group checkbox-grid">
+          <label><input type="checkbox" id="clear-temp-on-startup"><span data-i18n="clearTempOnStartup">Clear temp on startup</span></label>
+          <label><input type="checkbox" id="clear-cache-on-startup"><span data-i18n="clearCacheOnStartup">Clear cache on startup</span></label>
+        </div>
+
+        <div class="field-group">
+          <label for="temp-max-age-days" data-i18n="tempMaxAgeLabel">Delete temp entries older than (days)</label>
+          <input type="number" id="temp-max-age-days" min="0" max="3650" step="1">
+          <div class="field-hint" data-i18n="tempMaxAgeHint">Used for startup temp cleanup (and &quot;olderThan&quot; mode).</div>
+        </div>
+
+        <!-- Adobe CEP Panel (Premiere) -->
+        <h3 data-i18n="cepPanelHeading">Adobe Premiere Panel (CEP)</h3>
+        <div class="field-group">
+          <div id="cep-panel-status" class="field-hint" data-i18n="cepPanelStatusChecking">Checking panel status…</div>
+          <div id="cep-panel-error" class="input-error" role="alert" aria-live="polite" hidden></div>
+        </div>
+        <div class="field-group horizontal">
+          <button id="cep-install-panel" class="button" data-i18n="cepInstallPanel">Install/Repair Panel</button>
+          <button id="cep-uninstall-panel" class="btn-danger button" data-i18n="cepUninstallPanel">Uninstall Panel</button>
+          <button id="cep-open-folder" class="button" data-i18n="cepOpenFolder">Open CEP Folder</button>
+        </div>
+      </details>
+
+      <div class="field-group">
+        <button id="reset-preferences" class="btn-danger button" data-i18n="resetPreferences">Reset Preferences</button>
+      </div>
+      <div id="preferences-save-error" class="input-error preferences-save-error" role="alert" aria-live="assertive" hidden></div>      
+    <div class="field-group preferences-footer">
+      <span id="app-version"></span>
+      <a class="report-bug-link" href="https://www.leadae.com/bug-report" target="_blank" data-i18n="reportBug">Report Bug</a>
+    </div>
+  </div>
+  <div id="prefs-toast" class="toast" data-i18n="preferencesSaved"></div>
+</div>
+
+<!-- =======================
+     ACCOUNT & LICENSING
+     ======================= -->
+<div id="account" class="panel-section">
+  <!-- Version / What's New (v1 shows version + dependencies; later can show release notes) -->
+  <div class="section">
+    <h3 data-i18n="accountVersionInfoHeading">Version &amp; Build</h3>
+    <pre id="account-version-specs" class="status-log lae-summary" aria-live="polite"><span class="lae-placeholder" data-i18n="accountVersionLoading">Loading version info…</span></pre>
+    <div class="field-group horizontal">
+      <button id="account-copy-version-specs" class="button" data-i18n="accountCopyVersionInfo">Copy version info</button>
+    </div>
+    <div id="account-version-status" class="field-hint" aria-live="polite"></div>
+  </div>
+
+  <div class="section">
+    <h3 data-i18n="accountLicensingHeading">Account &amp; Licensing</h3>
+
+    <div class="account-license-summary">
+      <div><strong data-i18n="accountStatusLabel">Status:</strong> <span id="account-license-status">—</span></div>
+      <div><strong data-i18n="accountPlanLabel">Plan:</strong> <span id="account-license-tier">—</span></div>
+      <div><strong data-i18n="accountExpiresLabel">Expires:</strong> <span id="account-license-expires">—</span></div>
+      <div class="account-license-summary-split">
+        <span><strong data-i18n="accountTrialRemainingLabel">Trial remaining:</strong> <span id="account-trial-remaining">—</span></span>
+        <span class="account-license-sep" aria-hidden="true">-</span>
+        <span><strong data-i18n="accountReasonLabel">Reason:</strong> <span id="account-license-reason">—</span></span>
+      </div>
+    </div>
+
+    <div class="field-group spaced-top">
+      <button id="account-install-license" class="button" data-i18n="accountInstallLicense">Install License…</button>
+      <button id="account-clear-license" class="btn-danger button" data-i18n="accountClearLicense">Clear License</button>
+    </div>
+
+    <div id="account-trial-warning" class="input-error" role="alert" aria-live="polite" hidden></div>
+
+    <div class="field-group spaced-top account-manage-row">
+      <a
+        id="account-license-info-link"
+        class="button"
+        href="https://www.leadae.com/terms"
+        target="_blank"
+        rel="noopener"
+        data-i18n="accountViewLatestTermsOnline"
+      >View latest terms online</a>
+      <a
+        id="account-manage-link"
+        class="button"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        data-i18n="manageSubscriptionContactSales"
+      >Manage Subscription</a>
+    </div>
+  </div>
+</div>
+
+<!-- =======================
+     LOG VIEWER PANEL
+     ======================= -->
+<div id="log-viewer" class="panel-section">
+  <div class="section">
+      <div class="panel-toolbar-controls log-viewer-toolbar">
+        <div class="log-viewer-header-text">
+          <span data-i18n="logViewerHeaderLine1">Review past tasks, errors,</span><br>
+          <span data-i18n="logViewerHeaderLine2">and export log summaries.</span>
+        </div>
+        <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="log-viewer-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <!-- Log Filters -->
+    <h3><span data-i18n="logFilters"></span></h3>
+    <div class="field-group">
+      <label data-i18n="viewByDate"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="viewByDatePlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="view-by-date" name="view-by-date">
+      </div>
+      <input type="date" id="log-start-date">
+      <input type="date" id="log-end-date">
+
+      <label data-i18n="viewByTool"></label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="viewByToolPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="view-by-tool" name="view-by-tool">
+      </div>
+
+      <label><input type="checkbox" id="show-errors-only"><span data-i18n="onlyErrorsWarnings"></span></label>
+    </div>
+
+    <!-- Log Search -->
+    <h3 data-i18n="logDisplay">Log Display</h3>
+    <div class="field-group">
+      <input type="text" id="log-search" placeholder="" data-i18n="logSearch">
+      <label><input type="checkbox" id="include-system-logs"><span data-i18n="includeSystemLogs"></span></label>
+    </div>
+
+    <!-- Live Log Output -->
+     <div id="live-log-view" class="status-log"><span data-i18n="logsWillAppearHere"></span></div>
+
+    <div id="log-viewer-primary-controls-row" class="field-group horizontal spaced-top">
+      <button id="expand-task-details" data-i18n="expandTaskDetails" class="button"></button>
+      <button id="reset-log-viewer" class="btn-danger button" data-i18n="resetViewer"></button>
+      <button id="open-log-folder" data-i18n="openLogFolder" class="button"></button>
+    </div>
+    
+      <!-- Export Section -->
+      <h3><span data-i18n="exportLogs"></span></h3>
+      <div class="field-group">
+        <label data-i18n="logViewerExportFormat">Export Format</label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="logViewerExportFormat">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="export-format" name="export-format">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <button id="select-export-folder" data-i18n="exportFolder" class="button"></button>
+        <input type="text" id="export-folder-path" placeholder="Export folder path" data-i18n="exportFolderPath" readonly>
+      </div>
+
+    <button id="export-log-btn" data-i18n="exportLogs" class="button"></button>
+    <div id="log-toast" class="toast" data-i18n="exportComplete"></div>
+  </div>
+</div>
+
+<div id="transcribe" class="panel-section">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <button class="delete-preset-btn" data-panel="transcribe" title="Delete Preset" data-i18n-attrs="title:deletePresetTitle" disabled>🗑️</button>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="presetsPlaceholder">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="transcribe-preset" name="transcribe-preset">
+      </div>
+      <button id="transcribe-save-config" data-i18n="save" class="button"></button>
+      <button id="transcribe-load-config" data-i18n="load" class="button"></button>
+
+      <!-- 🔹 Transcribe overview tooltip - NEXT TO PRESETS, NOT ON THE FAR RIGHT -->
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="transcribe-overview-tooltip"></div>
+      </div>
+
+        <!-- Spacer pushes ONLY the editor button to the far right -->
+        <span class="toolbar-flex-spacer"></span>
+        <label class="checkbox-label" data-i18n-attrs="title:transcribeSendSubtitleTitle">
+  <input type="checkbox" id="transcribe-send-subtitle">
+  <span data-i18n="transcribeEditSubtitleAfterExport">Edit Subtitle after export</span>
+</label>
+
+<button id="open-subtitle-editor" type="button" data-i18n="openEditor" class="button">Open Editor…</button>
+      </div>
+
+    <div id="transcribe-lock-wrapper">
+
+    <!-- Input -->
+    <h3 data-i18n="transcribeInput">Input</h3>
+    <div class="field-group transcribe-input-row">
+      <button id="transcribe-select-files" data-i18n="transcribeSelectFiles" class="button"></button>
+      <textarea id="transcribe-files" data-i18n="transcribeNoSource" placeholder="" readonly rows="1"></textarea>
+      <!-- Watch Mode: swap textarea for a standard single-line path input (matches Ingest panel style) -->
+      <input type="text" id="transcribe-watch-folder-path" placeholder="" data-i18n="transcribeNoSource" readonly class="hidden">
+    </div>
+    <div class="file-info-scroll">
+      <div id="transcribe-file-info" class="file-info-grid placeholder">
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFile"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFormat"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnResolution"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnFps"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnAudio"></div>
+        <div class="file-info-grid-header" data-i18n="fileInfoColumnDuration"></div>
+      </div>
+    </div>
+
+    <!-- Engine Settings -->
+    <div class="heading-with-tooltip">
+      <h3><span data-i18n="engineSettings"></span></h3>
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip" id="transcribe-engine-tooltip"></div>
+      </div>
+    </div>
+    <div class="video-grid-3col">
+      <div class="form-item">
+        <label for="transcribe-engine" data-i18n="engine"></label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="engine">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="transcribe-engine" name="transcribe-engine">
+        </div>
+        <div id="transcribe-engine-hint" class="field-hint" aria-live="polite"></div>
+      </div>
+      <div class="form-item">
+        <label for="transcribe-language" data-i18n="language"></label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="language">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="transcribe-language" name="transcribe-language">
+        </div>
+        <div id="transcribe-language-hint" class="field-hint" aria-live="polite"></div>
+      </div>
+      <div class="form-item">
+        <label for="transcribe-accuracy-mode" data-i18n="accuracy"></label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="accuracy">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="transcribe-accuracy-mode" name="transcribe-accuracy-mode">
+        </div>
+        <div id="transcribe-accuracy-hint" class="field-hint" aria-live="polite"></div>
+      </div>
+    </div>
+    <!-- 2. Output Format Presets -->
+    <h3><span data-i18n="Output Formats"></span></h3>
+
+    <!-- Global timecode controls deprecated in favor of per-format mini panels.
+         Kept in DOM as internal defaults only, not shown to the user. -->
+    <div class="field-group horizontal timecode-toggle-row">
+      <label><input type="checkbox" id="out-timecodes"><span data-i18n="includeTimecodes"></span></label>
+    </div>
+    <div id="timecode-fields" class="video-grid-3col">
+      <div class="form-item">
+        <label for="transcribe-timecode-style" data-i18n="timecodeFormat">Timecode Format</label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="timecodeFormat">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="transcribe-timecode-style" name="transcribe-timecode-style">
+        </div>
+      </div>
+      <div class="form-item">
+        <label for="transcribe-fps" data-i18n="fpsOverride">Frame Rate Override (FPS)</label>
+        <input type="number" id="transcribe-fps" min="10" max="120" step="0.01" placeholder="" data-i18n="auto">
+      </div>
+      <div class="form-item">
+        <label for="transcribe-tc-start" data-i18n="startTimecodeOffset"></label>
+        <input type="text" id="transcribe-tc-start" placeholder="" data-i18n="timecodePlaceholder">
+      </div>
+    </div>
+
+    <pre id="sample-preview" class="status-log"><span data-i18n="selectFormatPreview"></span></pre>
+    <div class="field-group">
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Output Formats" data-i18n="Output Formats" data-i18n-attrs="placeholder:Output Formats">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="transcribe-output-formats" name="transcribe-output-formats">
+      </div>
+    </div>
+
+<!-- ⬇️ NEW: Plain Text (.txt) — format-specific panel -->
+  <details id="fmt-txt" class="format-options hidden" data-format="txt" open>
+    <summary><strong data-i18n="formatPlainText">Plain Text (.txt)</strong></summary>
+
+    <div class="video-grid-4col">
+      <div class="form-item">
+        <label for="fmt-txt-timestamp-placement" data-i18n="timestampPlacement">Timestamp Placement</label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="Timestamp Placement" data-i18n="timestampPlacement" data-i18n-attrs="placeholder:timestampPlacement">
+          <ul class="value-list">
+            <li data-value="none" data-i18n="timestampPlacementNone">None</li>
+            <li data-value="start_end" data-i18n="timestampPlacementStartEnd">Start-End</li>
+            <li data-value="start" data-i18n="timestampPlacementStartOnly">Start only</li>
+            <li data-value="every_line" data-i18n="timestampPlacementEveryLine">Every line</li>
+          </ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="fmt-txt-timestamp-placement" name="fmt-txt-timestamp-placement">
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label for="fmt-txt-timecode-format" data-i18n="timecodeFormat">Timecode Format</label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="Timecode Format" data-i18n="timecodeFormat" data-i18n-attrs="placeholder:timecodeFormat">
+          <ul class="value-list">
+            <li data-value="ndf" data-i18n="timecodeFormatNdf">NDF — HH:MM:SS:FF</li>
+            <li data-value="df" data-i18n="timecodeFormatDf">DF — HH:MM:SS;FF</li>
+            <li data-value="ms" data-i18n="timecodeFormatMs">Milliseconds — HH:MM:SS,mmm</li>
+          </ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="fmt-txt-timecode-format" name="fmt-txt-timecode-format">
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label for="fmt-txt-fps" data-i18n="fpsOverride">Frame Rate Override (FPS)</label>
+        <input type="number" id="fmt-txt-fps" min="1" max="120" step="0.001" placeholder="" data-i18n="auto">
+      </div>
+
+      <div class="form-item">
+        <label for="fmt-txt-tc-start" data-i18n="startTimecodeOffset">Start Timecode Offset</label>
+        <input type="text" id="fmt-txt-tc-start" value="01:00:00:00" placeholder="" data-i18n="timecodePlaceholder">
+      </div>
+    </div>
+
+    <div class="checkbox-grid fmt-txt-checkbox-row">
+      <label class="checkbox-label">
+        <input type="checkbox" id="fmt-txt-include-speaker-names">
+        <span data-i18n="includeSpeakerNames">Include Speaker Names</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="fmt-txt-group-by-speaker">
+        <span data-i18n="groupBySpeaker">Group by Speaker</span>
+      </label>
+    </div>
+  </details>
+
+  <!-- SubRip (.srt) — format-specific panel -->
+  <details id="fmt-srt" class="format-options hidden" data-format="srt" open>
+    <summary><strong data-i18n="srt">SubRip (.srt)</strong></summary>
+
+    <!-- SRT subtitle shaping options (format-specific) -->
+    <div class="video-grid-4col">
+      <div class="form-item">
+        <label for="fmt-srt-max-chars" data-i18n="maxCharsPerLine">Max characters per line</label>
+        <input type="number" id="fmt-srt-max-chars" value="42" min="1" max="200">
+      </div>
+      <div class="form-item">
+        <label for="fmt-srt-max-lines" data-i18n="maxLinesPerBlock">Max lines per subtitle block</label>
+        <input type="number" id="fmt-srt-max-lines" value="2" min="1" max="3">
+      </div>
+      <div class="form-item">
+        <label for="fmt-srt-max-duration" data-i18n="maxSubtitleDuration">Max subtitle duration (sec.)</label>
+        <input type="number" step="0.1" id="fmt-srt-max-duration" value="6.0" min="0.1" max="60">
+      </div>
+      <div class="form-item">
+        <label for="fmt-srt-line-ending" data-i18n="lineEndings">Line endings</label>
+        <div class="dropdown-wrapper dropdown-display">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="lineEndings">
+          <ul class="value-list">
+            <li data-value="lf" data-i18n="lineEndingLf">LF</li>
+            <li data-value="crlf" data-i18n="lineEndingCrlf">CRLF</li>
+          </ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="fmt-srt-line-ending" name="fmt-srt-line-ending">
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox-grid fmt-srt-checkbox-row">
+      <label class="checkbox-label">
+        <input type="checkbox" id="fmt-srt-include-speaker-names">
+        <span data-i18n="includeSpeakerNames">Include Speaker Names</span>
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="fmt-srt-utf8-bom">
+        <span data-i18n="utf8Bom">UTF‑8 BOM</span>
+      </label>
+    </div>
+
+    <details id="qc-srt" class="qc-advanced mt-075">
+      <summary><strong data-i18n="qc">QC</strong></summary>
+
+      <!-- QC thresholds (4-wide like the main SRT section) -->
+      <div class="video-grid-4col">
+        <div class="form-item">
+          <label for="fmt-srt-qc-max-cps" data-i18n="qcMaxCps">QC max CPS</label>
+          <input type="number" id="fmt-srt-qc-max-cps" min="5" max="60" step="0.1" value="20">
+        </div>
+        <div class="form-item">
+          <label for="fmt-srt-qc-min-duration" data-i18n="qcMinDurationSec">QC min duration (sec)</label>
+          <input type="number" id="fmt-srt-qc-min-duration" min="0" max="10" step="0.01" value="1.0">
+        </div>
+        <div class="form-item">
+          <label for="fmt-srt-qc-min-split-duration" data-i18n="qcMinSplitDurationSec">QC min split duration (sec)</label>
+          <input type="number" id="fmt-srt-qc-min-split-duration" min="0" max="10" step="0.01" value="0.5">
+        </div>
+        <div class="form-item">
+          <label for="fmt-srt-max-end-extension" data-i18n="maxEndExtensionSec">Max end-extension (sec)</label>
+          <input type="number" id="fmt-srt-max-end-extension" min="0" max="10" step="0.01" value="1.5">
+        </div>
+      </div>
+
+      <!-- QC behaviors (checkboxes underneath the threshold boxes) -->
+      <div class="checkbox-grid qc-grid-4col">
+        <label class="checkbox-label">
+          <input type="checkbox" id="fmt-srt-prevent-overlaps" checked>
+          <span data-i18n="preventOverlapsClampTimings">Prevent overlaps (clamp timings)</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="fmt-srt-allow-extension" checked>
+          <span data-i18n="allowEndExtensionIntoGaps">Allow end-extension into gaps</span>
+        </label>
+      </div>
+    </details>
+  </details>
+
+  <!-- WebVTT (.vtt) — format-specific panel -->
+  <details id="fmt-vtt" class="format-options hidden" data-format="vtt" open>
+    <summary><strong data-i18n="formatWebVtt">WebVTT (.vtt)</strong></summary>
+      <!-- WebVTT subtitle shaping options (moved from Subtitle Options) -->
+      <div class="video-grid-3col">
+        <div class="form-item">
+          <label for="fmt-vtt-max-chars" data-i18n="maxCharsPerLine">Max characters per line</label>
+          <input type="number" id="fmt-vtt-max-chars" value="42" min="1" max="200">
+        </div>
+        <div class="form-item">
+          <label for="fmt-vtt-max-lines" data-i18n="maxLinesPerBlock">Max lines per subtitle block</label>
+          <input type="number" id="fmt-vtt-max-lines" value="2" min="1" max="3">
+        </div>
+        <div class="form-item">
+          <label for="fmt-vtt-max-duration" data-i18n="maxSubtitleDuration">Max subtitle duration (sec.)</label>
+          <input type="number" step="0.1" id="fmt-vtt-max-duration" value="6.0" min="0.1" max="60">
+        </div>
+      </div>
+
+      <!-- VTT toggles (checkboxes underneath the shaping boxes, like SRT) -->
+      <div class="checkbox-grid fmt-vtt-checkbox-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="fmt-vtt-include-speaker-names">
+          <span data-i18n="includeSpeakerNames">Include Speaker Names</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="fmt-vtt-include-style">
+          <span data-i18n="includeWebvttStyleMetadata">Include WebVTT style metadata</span>
+        </label>
+      </div>
+
+
+<details id="qc-vtt" class="qc-advanced mt-075">
+  <summary><strong data-i18n="qc">QC</strong></summary>
+
+  <!-- QC thresholds (4-wide like the main SRT section) -->
+  <div class="video-grid-4col">
+    <div class="form-item">
+      <label for="fmt-vtt-qc-max-cps" data-i18n="qcMaxCps">QC max CPS</label>
+      <input type="number" id="fmt-vtt-qc-max-cps" min="5" max="60" step="0.1" value="20">
+    </div>
+    <div class="form-item">
+      <label for="fmt-vtt-qc-min-duration" data-i18n="qcMinDurationSec">QC min duration (sec)</label>
+      <input type="number" id="fmt-vtt-qc-min-duration" min="0" max="10" step="0.01" value="1.0">
+    </div>
+    <div class="form-item">
+      <label for="fmt-vtt-qc-min-split-duration" data-i18n="qcMinSplitDurationSec">QC min split duration (sec)</label>
+      <input type="number" id="fmt-vtt-qc-min-split-duration" min="0" max="10" step="0.01" value="0.5">
+    </div>
+    <div class="form-item">
+      <label for="fmt-vtt-max-end-extension" data-i18n="maxEndExtensionSec">Max end-extension (sec)</label>
+      <input type="number" id="fmt-vtt-max-end-extension" min="0" max="10" step="0.01" value="1.5">
+    </div>
+  </div>
+
+  <!-- QC behaviors (checkboxes underneath the threshold boxes) -->
+  <div class="checkbox-grid qc-grid-4col">
+    <label class="checkbox-label">
+      <input type="checkbox" id="fmt-vtt-prevent-overlaps">
+      <span data-i18n="preventOverlapsClampTimings">Prevent overlaps (clamp timings)</span>
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" id="fmt-vtt-allow-extension" checked>
+      <span data-i18n="allowEndExtensionIntoGaps">Allow end-extension into gaps</span>
+    </label>
+  </div>
+</details>
+    </details>
+
+<!-- Scenarist SCC (.scc) — format-specific mini panel -->
+<details id="fmt-scc" class="format-options hidden" data-format="scc" open>
+  <summary><strong data-i18n="formatScc">Scenarist Closed Captions (.scc) — BETA (CC1–CC4, pop-on only)</strong></summary>
+
+      <!-- Shaping (SCC defaults) -->
+    <div class="video-grid-3col">
+      <div class="form-item">
+        <label for="fmt-scc-max-chars" data-i18n="sccMaxCharsPerLine">Max characters per line</label>
+        <input type="number" id="fmt-scc-max-chars" value="28" min="20" max="32">
+      </div>
+      <div class="form-item">
+        <label for="fmt-scc-max-lines" data-i18n="sccMaxLinesPerBlock">Max lines per subtitle block</label>
+        <input type="number" id="fmt-scc-max-lines" value="2" min="1" max="2">
+      </div>
+      <div class="form-item">
+        <label for="fmt-scc-max-duration" data-i18n="sccMaxDuration">Max subtitle duration (sec.)</label>
+        <input type="number" step="0.1" id="fmt-scc-max-duration" value="6.0" min="1" max="10">
+      </div>
+    </div>
+
+    <!-- SCC Primary Controls (ONLY shown when SCC selected) -->
+    <div class="video-grid-3col" id="scc-primary-row">
+      <div class="form-item" id="scc-starttc-slot">
+        <!-- Start TC is injected here by renderer.transcribe.js -->
+      </div>
+
+      <div class="form-item" id="scc-align-row">
+        <label for="scc-alignment" data-i18n="captionAlignment">Caption Alignment</label>
+        <div class="dropdown-wrapper dropdown-display compact">
+          <input class="chosen-value" type="text" placeholder="Alignment" data-i18n="captionAlignment" data-i18n-attrs="placeholder:captionAlignment">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="scc-alignment" name="scc-alignment">
+        </div>
+      </div>
+
+      <div class="form-item" id="scc-service-row">
+        <label for="scc-channel" data-i18n="captionService">Caption Service</label>
+        <div class="dropdown-wrapper dropdown-display compact">
+          <input class="chosen-value" type="text" placeholder="" data-i18n="captionServicePlaceholder">
+          <ul class="value-list"></ul>
+          <span class="dropdown-arrow"></span>
+          <input type="hidden" id="scc-channel" name="scc-channel">
+        </div>
+      </div>
+    </div>
+
+    <!-- SCC Placement (CEA-608) -->
+    <div class="video-grid-2col mt-05" id="scc-placement-wrap">
+      <div class="form-item">
+        <label for="fmt-scc-placement-bottom-row" data-i18n="sccBottomRow">Bottom row (1–15)</label>
+        <input type="number" id="fmt-scc-placement-bottom-row" value="15" min="1" max="15" step="1">
+      </div>
+
+      <div class="form-item">
+        <label for="fmt-scc-placement-left-col" data-i18n="sccLeftColumn">Left column (0–31)</label>
+        <input type="number" id="fmt-scc-placement-left-col" value="2" min="0" max="31" step="1">
+      </div>
+
+      <!-- Placement mode UI removed: SCC placement is always user-driven via Visual placement. -->
+      <input type="hidden" id="fmt-scc-placement-mode" name="fmt-scc-placement-mode" value="custom">
+    </div>
+
+    <div id="scc-window-grid-picker" class="scc-window-grid-picker mt-05">
+      <div class="scc-window-grid-title">
+        <div><strong data-i18n="visualPlacement">Visual placement</strong> <span class="scc-window-grid-hint" data-i18n="cea608SafeAreaHint">(CEA‑608: 32×15 in 4:3 safe caption area)</span></div>
+        <div class="scc-window-grid-controls">
+          <button type="button" class="small" id="scc-window-nudge-up" title="Nudge up" data-i18n-attrs="title:nudgeUpTitle">▲</button>
+          <button type="button" class="small" id="scc-window-nudge-down" title="Nudge down" data-i18n-attrs="title:nudgeDownTitle">▼</button>
+          <button type="button" class="small" id="scc-window-nudge-left" title="Nudge left" data-i18n-attrs="title:nudgeLeftTitle">◀</button>
+          <button type="button" class="small" id="scc-window-nudge-right" title="Nudge right" data-i18n-attrs="title:nudgeRightTitle">▶</button>
+        </div>
+      </div>
+
+      <canvas id="fmt-scc-window-grid-canvas" width="640" height="360" aria-label="CEA-608 placement grid" data-i18n-attrs="aria-label:cea608PlacementGridAria"></canvas>
+
+      <div class="scc-window-grid-meta" id="scc-window-grid-meta">—</div>
+    </div>
+
+    <!-- Advanced SCC / QC controls (broadcast deliverables vary) -->
+    <details id="fmt-scc-advanced" class="mt-05">
+      <summary><strong data-i18n="advancedScc">Advanced SCC</strong></summary>
+
+      <div class="scc-advanced-top">
+        <div class="scc-advanced-checks">
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-allow-ndf" type="checkbox">
+              <span data-i18n="sccAllowNdfTimecode">Allow NDF timecode for SCC (HH:MM:SS:FF)</span>
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-repeat-control" type="checkbox" checked>
+              <span data-i18n="sccRepeatControlCodes">Repeat control codes (RCL/EDM/ENM/EOC)</span>
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-repeat-preamble" type="checkbox" checked>
+              <span data-i18n="sccRepeatPacCodes">Repeat PAC (preamble) codes</span>
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-strip-leading-dashes" type="checkbox">
+              <span data-i18n="sccStripLeadingDashes">Strip leading dashes</span>
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-pad-even" type="checkbox">
+              <span data-i18n="sccPadEvenWordCount">Pad even SCC word-count (NOP fill)</span>
+            </label>
+          </div>
+          <div class="form-item">
+            <label class="checkbox-label">
+              <input id="fmt-scc-strict-encoding" type="checkbox">
+              <span data-i18n="strictCea608Encoding">Strict CEA-608 character encoding (fail on unsupported glyphs)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="scc-advanced-grid">
+          <div class="form-item">
+            <label for="fmt-scc-safe-left" data-i18n="sccSafeMarginLeftCols">Safe margin left (cols)</label>
+            <input type="number" id="fmt-scc-safe-left" min="0" max="15" step="1" value="0">
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-safe-right" data-i18n="sccSafeMarginRightCols">Safe margin right (cols)</label>
+            <input type="number" id="fmt-scc-safe-right" min="0" max="15" step="1" value="0">
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-time-source" data-i18n="sccTimingAnchor">SCC timing anchor</label>
+            <div class="dropdown-wrapper dropdown-display">
+              <input class="chosen-value" type="text" placeholder="" data-i18n="sccTimingAnchor">
+              <ul class="value-list"></ul>
+              <span class="dropdown-arrow"></span>
+              <input type="hidden" id="fmt-scc-time-source" name="fmt-scc-time-source">
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-start-reset-at" data-i18n="startResetLine">Start reset line</label>
+            <div class="dropdown-wrapper dropdown-display">
+              <input class="chosen-value" type="text" placeholder="" data-i18n="startResetLine">
+              <ul class="value-list"></ul>
+              <span class="dropdown-arrow"></span>
+              <input type="hidden" id="fmt-scc-start-reset-at" name="fmt-scc-start-reset-at">
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-start-reset-op" data-i18n="startResetOp">Start reset op</label>
+            <div class="dropdown-wrapper dropdown-display">
+              <input class="chosen-value" type="text" placeholder="" data-i18n="startResetOp">
+              <ul class="value-list"></ul>
+              <span class="dropdown-arrow"></span>
+              <input type="hidden" id="fmt-scc-start-reset-op" name="fmt-scc-start-reset-op">
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-prestart-roll" data-i18n="preRollBeforeStartTcSec">Pre-roll before Start TC (sec)</label>
+            <input type="number" id="fmt-scc-prestart-roll" min="0" max="30" step="0.01" value="0">
+          </div>
+          <div class="form-item">
+            <label for="fmt-scc-prefix-words" data-i18n="prefixSccWords">Prefix SCC words</label>
+            <input id="fmt-scc-prefix-words" type="text" placeholder="" data-i18n="prefixSccWordsPlaceholder">
+          </div>
+
+          <div class="form-item" id="scc-offset-slot">
+            <!-- Caption Slip / Offset is injected here by renderer.transcribe.js -->
+          </div>
+        </div>
+      </div>
+
+      
+    </details>
+
+  
+
+    <details id="qc-scc" class="qc-advanced mt-075">
+      <summary><strong data-i18n="qc">QC</strong></summary>
+      <div class="video-grid-2col">
+              <div class="form-item">
+                <label for="fmt-scc-export-policy" data-i18n="qcEnforcement">QC enforcement</label>
+                <div class="dropdown-wrapper dropdown-display">
+                  <input class="chosen-value" type="text" placeholder="" data-i18n="qcEnforcement">
+                  <ul class="value-list"></ul>
+                  <span class="dropdown-arrow"></span>
+                  <input type="hidden" id="fmt-scc-export-policy" name="fmt-scc-export-policy" value="warn">
+                </div>
+              </div>
+              <div class="form-item">
+                <label for="fmt-scc-shape-mode" data-i18n="autoShapeMode">Auto-shape mode</label>
+                <div class="dropdown-wrapper dropdown-display">
+                  <input class="chosen-value" type="text" placeholder="" data-i18n="autoShapeMode">
+                  <ul class="value-list">
+                    <li data-value="off" data-i18n="off">Off</li>
+                    <li data-value="conservative" data-i18n="conservative">Conservative</li>
+                    <li data-value="aggressive" data-i18n="aggressive">Aggressive</li>
+                  </ul>
+                  <span class="dropdown-arrow"></span>
+                  <input type="hidden" id="fmt-scc-shape-mode" name="fmt-scc-shape-mode" value="conservative">
+                </div>
+              </div>
+            </div>
+
+            <div class="video-grid-3col">
+              <div class="form-item">
+                <label for="fmt-scc-shape-micro-dur" data-i18n="mergeMicroCuesUnderSec">Merge micro‑cues &lt; (sec)</label>
+                <input id="fmt-scc-shape-micro-dur" type="number" min="0" max="2" step="0.01" value="0.40">
+              </div>
+
+              <div class="form-item">
+                <label for="fmt-scc-shape-micro-gap" data-i18n="mergeGapsUnderSec">Merge gaps &lt; (sec)</label>
+                <input id="fmt-scc-shape-micro-gap" type="number" min="0" max="2" step="0.01" value="0.12">
+              </div>
+
+              <div class="form-item">
+                <label for="fmt-scc-shape-max-shift" data-i18n="maxRetimeShiftSec">Max retime shift (sec)</label>
+                <input id="fmt-scc-shape-max-shift" type="number" min="0" max="2" step="0.01" value="0.25">
+              </div>
+            </div>
+
+            <div class="form-item">
+              <label class="checkbox-label">
+                <input id="fmt-scc-shape-fix-starttc" type="checkbox" checked>
+                <span data-i18n="delayFirstCaptionIfStartTc">If Start TC is set, delay the first caption so no SCC lines land before Start TC (prevents late‑EOC)</span>
+              </label>
+            </div>
+
+            <hr>
+
+            <div class="video-grid-3col">
+              <div class="form-item">
+                <label for="fmt-scc-qc-max-cps" data-i18n="qcMaxCpsCharsPerSec">QC max CPS (chars/sec)</label>
+                <input type="number" id="fmt-scc-qc-max-cps" min="1" max="60" step="0.1" value="20">
+              </div>
+              <div class="form-item">
+                <label for="fmt-scc-qc-max-wpm" data-i18n="qcMaxWpm">QC max WPM</label>
+                <input type="number" id="fmt-scc-qc-max-wpm" min="10" max="400" step="1" value="180">
+              </div>
+              <div class="form-item">
+                <label for="fmt-scc-qc-min-duration" data-i18n="qcMinDurationSec">QC min duration (sec)</label>
+                <input type="number" id="fmt-scc-qc-min-duration" min="0" max="10" step="0.01" value="0.8">
+              </div>
+            </div>
+
+            <div class="video-grid-3col">
+              <div class="form-item">
+                <label for="fmt-scc-qc-min-gap" data-i18n="qcMinGapSec">QC min gap (sec)</label>
+                <input type="number" id="fmt-scc-qc-min-gap" min="0" max="10" step="0.01" value="0.1">
+              </div>
+              <div class="form-item">
+                <label for="fmt-scc-qc-max-late-eoc" data-i18n="qcMaxLateEocSec">QC max late EOC (sec)</label>
+                <input type="number" id="fmt-scc-qc-max-late-eoc" min="0" max="2" step="0.01" value="0.1">
+              </div>
+              <div class="form-item">
+                <label for="fmt-scc-qc-max-late-eoc-count" data-i18n="qcMaxLateEocCount">QC max late EOC count</label>
+                <input type="number" id="fmt-scc-qc-max-late-eoc-count" min="0" max="999" step="1" value="0">
+              </div>
+            </div>
+    </details>
+
+  </details>
+
+<!-- MacCaption MCC (.mcc) — format-specific mini panel -->
+<details id="fmt-mcc" class="format-options hidden" data-format="mcc" open>
+  <summary><strong data-i18n="formatMcc">MacCaption Closed Captions (.mcc)</strong></summary>
+
+  <!-- Authoring limits (moved ABOVE alignment + block height) -->
+  <div class="video-grid-3col">
+    <div class="form-item">
+      <label for="fmt-mcc-max-chars" data-i18n="maxCharsPerLine">Max characters per line</label>
+      <input type="number" id="fmt-mcc-max-chars" value="42" min="1" max="42">
+    </div>
+    <div class="form-item">
+      <label for="fmt-mcc-max-lines" data-i18n="maxLinesPerBlock">Max lines per subtitle block</label>
+      <input type="number" id="fmt-mcc-max-lines" value="2" min="1" max="3">
+    </div>
+    <div class="form-item">
+      <label for="fmt-mcc-max-duration" data-i18n="maxSubtitleDuration">Max subtitle duration (sec.)</label>
+      <input type="number" step="0.1" id="fmt-mcc-max-duration" value="6.0" min="0.1" max="60">
+    </div>
+  </div>
+
+  <!-- Timing overrides (moved directly under authoring limits) -->
+  <div class="video-grid-3col" id="mcc-timing-row">
+    <div class="form-item">
+      <label for="fmt-mcc-tc-start" data-i18n="startTimecodeOverride">Start Timecode (override)</label>
+      <input type="text" id="fmt-mcc-tc-start" placeholder="" data-i18n="timecodePlaceholder">
+    </div>
+
+    <div class="form-item">
+      <label for="fmt-mcc-fps" data-i18n="fpsOverride">Frame Rate Override (FPS)</label>
+      <input type="number" id="fmt-mcc-fps" min="1" max="120" step="0.001" placeholder="" data-i18n="auto">
+    </div>
+
+    <div class="form-item">
+      <label for="fmt-mcc-timecode-offset" data-i18n="transcribe.sccOffsetLabel">Caption Slip / Offset</label>
+      <input type="text" id="fmt-mcc-timecode-offset" placeholder="" data-i18n="transcribe.sccOffsetPlaceholder">
+    </div>
+  </div>
+
+  <div class="video-grid-2col">
+    <div class="form-item">
+      <label for="fmt-mcc-alignment" data-i18n="textAlignmentJustify">Text alignment (justify)</label>
+      <div class="dropdown-wrapper dropdown-display compact">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="textAlignment">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="fmt-mcc-alignment" name="fmt-mcc-alignment">
+      </div>
+    </div>
+
+    <div class="form-item" id="mcc-window-lines-height-wrap">
+      <label for="fmt-mcc-window-lines-height" data-i18n="blockHeightLines">Block height (lines)</label>
+      <input type="number" id="fmt-mcc-window-lines-height" min="1" max="3" step="1" value="2">
+    </div>
+  </div>
+
+	  <!-- 708 window placement: visual grid + anchor controls (always enabled). -->
+	  <input type="hidden" id="fmt-mcc-window-anchor-id" name="fmt-mcc-window-anchor-id">
+	  <div class="video-grid-4col mt-025" id="mcc-window-custom-controls">
+	    <div class="form-item">
+	      <label for="fmt-mcc-window-row"><span data-i18n="anchorRow">Anchor row</span> <span class="coord-sys-tag" data-i18n="rowCol15">Row/Col (1–15)</span></label>
+	      <input type="number" id="fmt-mcc-window-row" min="1" max="15" step="1" value="14">
+	    </div>
+	    <div class="form-item">
+	      <label for="fmt-mcc-window-col"><span data-i18n="anchorCol">Anchor col</span> <span class="coord-sys-tag" data-i18n="rowCol42">Row/Col (1–42)</span></label>
+	      <input type="number" id="fmt-mcc-window-col" min="1" max="42" step="1" value="22">
+	    </div>
+	    <div class="form-item">
+	      <label for="fmt-mcc-window-anchor-v"><span data-i18n="verticalPosition">Vertical position</span> <span id="mcc-window-v-coord" class="coord-sys-tag" data-i18n="pct099">% (0–99)</span></label>
+	      <input type="number" id="fmt-mcc-window-anchor-v" min="0" max="99" step="1" value="90">
+	    </div>
+	    <div class="form-item">
+	      <label for="fmt-mcc-window-anchor-h"><span data-i18n="horizontalPosition">Horizontal position</span> <span id="mcc-window-h-coord" class="coord-sys-tag" data-i18n="pct099">% (0–99)</span></label>
+	      <input type="number" id="fmt-mcc-window-anchor-h" min="0" max="99" step="1" value="50">
+	    </div>
+	  </div>
+
+      <div id="mcc-window-grid-picker" class="mcc-window-grid-picker mt-05">
+        <div class="mcc-window-grid-title">
+          <div><strong data-i18n="visualPlacement">Visual placement</strong> <span class="mcc-window-grid-hint" data-i18n="mccSafeTitleHint">(16:9 frame, safe-title 42×15)</span></div>
+          <div class="mcc-window-grid-controls" aria-label="Nudge anchor by one cell" data-i18n-attrs="aria-label:mccNudgeControlsAria">
+            <button type="button" class="small" id="mcc-window-nudge-up" title="Nudge up" data-i18n-attrs="title:nudgeUpTitle">▲</button>
+            <button type="button" class="small" id="mcc-window-nudge-down" title="Nudge down" data-i18n-attrs="title:nudgeDownTitle">▼</button>
+            <button type="button" class="small" id="mcc-window-nudge-left" title="Nudge left" data-i18n-attrs="title:nudgeLeftTitle">◀</button>
+            <button type="button" class="small" id="mcc-window-nudge-right" title="Nudge right" data-i18n-attrs="title:nudgeRightTitle">▶</button>
+          </div>
+        </div>
+
+        <canvas id="fmt-mcc-window-grid-canvas" width="480" height="270" aria-label="MCC 708 window placement grid" data-i18n-attrs="aria-label:mccPlacementGridAria"></canvas>
+
+        <div class="mcc-window-grid-meta" id="mcc-window-grid-meta">—</div>
+      </div>
+
+
+  <div class="video-grid-3col">
+    <div class="form-item">
+      <label for="fmt-mcc-service-number" data-i18n="service708Number">708 service #</label>
+      <input type="number" id="fmt-mcc-service-number" value="1" min="1" max="63">
+    </div>
+    <div class="form-item">
+      <label for="fmt-mcc-language" data-i18n="language">Language</label>
+      <input type="text" id="fmt-mcc-language" value="eng">
+    </div>
+    <div class="form-item">
+      <label for="fmt-mcc-timecode-offset-policy" data-i18n="offsetPolicy">Offset policy</label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="" data-i18n="offsetPolicy">
+        <ul class="value-list"></ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="fmt-mcc-timecode-offset-policy" name="fmt-mcc-timecode-offset-policy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature toggles (moved directly under 708 service/language/offset policy) -->
+  <div class="video-grid-3col">
+    <div class="form-item">
+      <label class="checkbox-label">
+        <input id="fmt-mcc-include-608" type="checkbox" checked>
+        <span data-i18n="include608Compatibility">Include 608 compatibility</span>
+      </label>
+    </div>
+    <div class="form-item">
+      <label class="checkbox-label">
+        <input id="fmt-mcc-telestream-compress" type="checkbox">
+        <span data-i18n="compressedTelestream">Compressed (Telestream)</span>
+      </label>
+    </div>
+    <div class="form-item">
+      <label class="checkbox-label">
+        <input id="fmt-mcc-embed-cdp-timecode" type="checkbox">
+        <span data-i18n="embedSmpteTimecodeInCdp">Embed SMPTE timecode in CDP (advanced)</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="video-grid-3col">
+    <div class="form-item">
+      <label class="checkbox-label">
+        <input id="fmt-mcc-include-ccsvc-info" type="checkbox" checked>
+        <span data-i18n="includeCdpServiceInfo">Include CDP service info (0x73) (broadcast)</span>
+      </label>
+    </div>
+    <div class="form-item">
+      <label class="checkbox-label">
+        <input id="fmt-mcc-pingpong-windows" type="checkbox" checked>
+        <span data-i18n="truePopOnPingPongWindows">True pop-on (ping‑pong windows)</span>
+      </label>
+    </div>
+    <div class="form-item"></div>
+  </div>
+
+  <details id="fmt-mcc-608-advanced" class="qc-advanced mt-05">
+    <summary><strong data-i18n="advanced608CompatibilityTrack">Advanced (608 compatibility track)</strong></summary>
+
+    <div class="scc-advanced-top mt-05">
+      <div class="scc-advanced-checks">
+        <div class="form-item">
+          <label class="checkbox-label"><input id="fmt-mcc-repeat-control" type="checkbox">
+            <span data-i18n="repeatControlCodesRedundancy">Repeat control codes (redundancy)</span></label>
+        </div>
+        <div class="form-item">
+          <label class="checkbox-label"><input id="fmt-mcc-repeat-preamble" type="checkbox" checked>
+            <span data-i18n="repeatPacCodesRedundancy">Repeat PAC codes (redundancy)</span></label>
+        </div>
+        <div class="form-item">
+          <label class="checkbox-label"><input id="fmt-mcc-pad-even" type="checkbox">
+            <span data-i18n="padEvenLengthLines">Pad even-length lines</span></label>
+        </div>
+        <div class="form-item">
+          <label class="checkbox-label"><input id="fmt-mcc-strict-encoding" type="checkbox">
+            <span data-i18n="strictCea608Encoding">Strict CEA-608 character encoding (fail on unsupported glyphs)</span></label>
+        </div>
+      </div>
+
+      <div class="scc-advanced-grid">
+        <div class="form-item">
+          <label for="fmt-mcc-safe-left" data-i18n="safeLeftCols">Safe left (cols)</label>
+          <input type="number" id="fmt-mcc-safe-left" min="0" max="15" step="1" value="0">
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-safe-right" data-i18n="safeRightCols">Safe right (cols)</label>
+          <input type="number" id="fmt-mcc-safe-right" min="0" max="15" step="1" value="0">
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-overflow-policy" data-i18n="overflowPolicy608Wrap">Overflow policy (608 wrap)</label>
+          <div class="dropdown-wrapper dropdown-display compact">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="overflowPolicy608Wrap">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="fmt-mcc-overflow-policy" name="fmt-mcc-overflow-policy">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="fmt-mcc-shape-mode" data-i18n="autoShape608">Auto-shape (608)</label>
+          <div class="dropdown-wrapper dropdown-display compact">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="autoShape608">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="fmt-mcc-shape-mode" name="fmt-mcc-shape-mode">
+          </div>
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-shape-micro-dur" data-i18n="microCueDurationSec">Micro cue dur (sec)</label>
+          <input type="number" id="fmt-mcc-shape-micro-dur" min="0" max="2" step="0.01" value="0.40">
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-shape-micro-gap" data-i18n="microGapSec">Micro gap (sec)</label>
+          <input type="number" id="fmt-mcc-shape-micro-gap" min="0" max="2" step="0.01" value="0.12">
+        </div>
+
+        <div class="form-item">
+          <label for="fmt-mcc-shape-max-shift" data-i18n="maxShiftSec">Max shift (sec)</label>
+          <input type="number" id="fmt-mcc-shape-max-shift" min="0" max="5" step="0.01" value="0.25">
+        </div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </details>
+
+  <details id="qc-mcc" class="qc-advanced mt-075">
+      <summary><strong data-i18n="qc">QC</strong></summary>
+      <div class="video-grid-2col mt-05">
+        <div class="form-item">
+          <label for="fmt-mcc-export-policy" data-i18n="qcEnforcement">QC enforcement</label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="qcEnforcement">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="fmt-mcc-export-policy" name="fmt-mcc-export-policy" value="warn">
+          </div>
+        </div>
+      </div>
+
+      <div class="video-grid-3col">
+        <div class="form-item">
+          <label for="fmt-mcc-qc-max-cps" data-i18n="qcMaxCpsCharsPerSec">QC max CPS (chars/sec)</label>
+          <input type="number" id="fmt-mcc-qc-max-cps" min="1" max="60" step="0.1" value="20">
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-qc-max-wpm" data-i18n="qcMaxWpm">QC max WPM</label>
+          <input type="number" id="fmt-mcc-qc-max-wpm" min="10" max="400" step="1" value="180">
+        </div>
+        <div class="form-item">
+          <label for="fmt-mcc-qc-min-duration" data-i18n="qcMinDurationSec">QC min duration (sec)</label>
+          <input type="number" id="fmt-mcc-qc-min-duration" min="0" max="10" step="0.01" value="0.8">
+        </div>
+      </div>
+
+      <div class="video-grid-3col">
+        <div class="form-item">
+          <label for="fmt-mcc-qc-min-gap" data-i18n="qcMinGapSec">QC min gap (sec)</label>
+          <input type="number" id="fmt-mcc-qc-min-gap" min="0" max="10" step="0.01" value="0.1">
+        </div>
+      </div>
+    </details>
+
+</details>
+
+<!-- Scripted (CSV) — format-specific panel -->
+<details id="fmt-script" class="format-options hidden" data-format="script" open>
+  <summary><strong data-i18n="formatScripted">Scripted (CSV)</strong></summary>
+
+  <div class="video-grid-4col">
+    <div class="form-item">
+      <label for="fmt-script-timestamp-placement" data-i18n="timestampPlacement">Timestamp Placement</label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Timestamp Placement" data-i18n="timestampPlacement" data-i18n-attrs="placeholder:timestampPlacement">
+        <ul class="value-list">
+          <li data-value="none" data-i18n="timestampPlacementNone">None</li>
+          <li data-value="start_end" data-i18n="timestampPlacementStartEnd">Start-End</li>
+          <li data-value="start" data-i18n="timestampPlacementStartOnly">Start only</li>
+          <li data-value="every_line" data-i18n="timestampPlacementEveryLine">Every line</li>
+        </ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="fmt-script-timestamp-placement" name="fmt-script-timestamp-placement">
+      </div>
+    </div>
+
+    <div class="form-item">
+      <label for="fmt-script-timecode-format" data-i18n="timecodeFormat">Timecode Format</label>
+      <div class="dropdown-wrapper dropdown-display">
+        <input class="chosen-value" type="text" placeholder="Timecode Format" data-i18n="timecodeFormat" data-i18n-attrs="placeholder:timecodeFormat">
+        <ul class="value-list">
+          <li data-value="ndf" data-i18n="timecodeFormatNdf">NDF — HH:MM:SS:FF</li>
+          <li data-value="df" data-i18n="timecodeFormatDf">DF — HH:MM:SS;FF</li>
+          <li data-value="ms" data-i18n="timecodeFormatMs">Milliseconds — HH:MM:SS,mmm</li>
+        </ul>
+        <span class="dropdown-arrow"></span>
+        <input type="hidden" id="fmt-script-timecode-format" name="fmt-script-timecode-format">
+      </div>
+    </div>
+
+    <div class="form-item">
+      <label for="fmt-script-fps" data-i18n="fpsOverride">Frame Rate Override (FPS)</label>
+      <input type="number" id="fmt-script-fps" min="1" max="120" step="0.001" placeholder="" data-i18n="auto">
+    </div>
+
+    <div class="form-item">
+      <label for="fmt-script-tc-start" data-i18n="startTimecodeOffset">Start Timecode Offset</label>
+      <input type="text" id="fmt-script-tc-start" value="01:00:00:00" placeholder="" data-i18n="timecodePlaceholder">
+    </div>
+  </div>
+
+  <div class="checkbox-grid fmt-script-checkbox-row">
+    <label class="checkbox-label">
+      <input type="checkbox" id="fmt-script-include-speaker-names">
+      <span data-i18n="includeSpeakerNames">Include Speaker Names</span>
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" id="fmt-script-group-by-speaker">
+      <span data-i18n="groupBySpeaker">Group by Speaker</span>
+    </label>
+  </div>
+</details>
+
+        <!-- (Removed legacy SCC rows: mode, roll-up clear, EOF/EDM, legacy font comment, XML sidecar) -->
+
+      <!-- 3. Enhancements -->
+      <details>
+        <summary><strong><span data-i18n="enhancements"></span></strong></summary>
+
+        <div class="enhancements-grid spaced-top">
+          <!-- Column 1: Content Cleanup -->
+          <div class="enhancement-column">
+            <div class="enhancement-heading" data-i18n="enhancementContentCleanup">
+              Content Cleanup
+            </div>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="transcribe-filter-nonspeech">
+              <span data-i18n="removeNonSpeech"></span>
+            </label>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="transcribe-remove-fillers">
+              <span data-i18n="removeFillers"></span>
+            </label>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="transcribe-remove-leading-chars" checked>
+              <span data-i18n="removeLeadingChars"></span>
+            </label>
+          </div>
+
+          <!-- Column 2: Safety Filters -->
+          <div class="enhancement-column">
+            <div class="enhancement-heading" data-i18n="enhancementSafetyFilters">
+              Safety Filters
+            </div>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="acc-redact">
+              <span data-i18n="redactExplicit"></span>
+            </label>
+          </div>
+
+          <!-- Column 3: Reserved / Empty -->
+          <div class="enhancement-column enhancement-column--empty" aria-hidden="true"></div>
+        </div>
+      </details>
+
+      <!-- 4. Translate -->
+      <details>
+        <summary><strong><span data-i18n="translate"></span></strong></summary>
+        <div class="field-group horizontal">
+            <label><input type="checkbox" id="translate-enable"><span data-i18n="translateOutput"></span></label>
+            <div class="dropdown-wrapper dropdown-display">
+              <input class="chosen-value" type="text" placeholder="Language" data-i18n="languageLabel" data-i18n-attrs="placeholder:languageLabel">
+              <ul class="value-list"></ul>
+              <span class="dropdown-arrow"></span>
+              <input type="hidden" id="translate-target" name="translate-target">
+          </div>
+        </div>
+        <div id="transcribe-translate-hint" class="field-hint" aria-live="polite"></div>
+      </details>
+      
+        <!-- Automation / Webhook Integration -->
+    <details data-webhook-section>
+      <summary><strong><span data-i18n="automationIntegration"></span></strong></summary>
+
+      <div class="field-group">
+        <label><input type="checkbox" id="transcribe-enable-n8n"><span data-i18n="transcribeEnableN8N"></span></label>
+        <label><input type="checkbox" id="transcribe-n8n-allow-private"><span data-i18n="allowPrivateWebhookTargets"></span></label>
+        <input type="text" id="transcribe-n8n-url" placeholder="" data-i18n="transcribeN8NUrl">
+        <label><input type="checkbox" id="transcribe-n8n-log"><span data-i18n="transcribeN8NLog"></span></label>
+      </div>
+
+    </details>
+
+    <!-- Watch Mode -->
+    <details>
+      <summary><strong><span data-i18n="watchMode"></span></strong></summary>
+      <div class="field-group">
+        <label><input type="checkbox" id="transcribe-watch-mode"><span data-i18n="enableWatchMode"></span></label>
+        <span id="transcribe-watch-state" class="watch-state"></span>
+      </div>
+    </details>
+
+    <!-- Output (moved to match panel rhythm: after Watch Mode, before Notes) -->
+    <h3 data-i18n="transcribeOutput">Output</h3>
+    <div class="field-group transcribe-output-row">
+      <button id="transcribe-output-select" data-i18n="transcribeOutputSelect" class="button"></button>
+      <input type="text" id="transcribe-output-path" placeholder="" data-i18n="transcribeNoDestination" readonly>
+    </div>
+
+    <!-- 5. File Output & Post-Actions -->
+
+      <textarea id="transcribe-notes" placeholder="" data-i18n="transcribeNotes"></textarea>
+
+      <!-- Controls -->
+    <div class="field-group adobe-controls-row spaced-top" id="transcribe-controls-row">
+      <button id="start-transcribe" data-i18n="startTranscribe" class="button"></button>
+      <button id="reset-transcribe" class="btn-danger button" data-i18n="resetTranscribe"></button>
+      <button id="cancel-transcribe" class="btn-danger button" data-i18n="cancelTranscribe"></button>
+
+      <!-- Watch Mode eyes (visible only while actively watching) -->
+      <div class="watch-eyes-slot">
+        <span id="transcribe-watch-eyes" class="watch-eyes" aria-hidden="true" title="Watch Mode active" data-i18n-attrs="title:watchModeActiveTitle">
+          <span class="watch-eyes__loader" aria-hidden="true"></span>
+        </span>
+      </div>
+
+      <!-- Inline loader (match Transcode layout; indeterminate progress + status text) -->
+      <div id="transcribe-loader-inline" aria-hidden="true">
+        <progress id="transcribe-progress"></progress>
+        <output for="transcribe-progress" id="transcribe-status-text" class="eta-inline" data-i18n="transcribeStatusTranscribing">Transcribing...</output>
+      </div>
+
+      <!-- Hamster wheel, right-aligned (same structure as other panels) -->
+      <div id="transcribe-job-status" aria-hidden="true">
+        <div class="wheel-and-hamster"></div>
+      </div>
+    </div>
+
+    </div> <!-- end of transcribe-lock-wrapper -->
+
+    <!-- Summary -->
+      <h3><span data-i18n="summary"></span></h3>
+      <textarea id="transcribe-job-preview-box" class="status-log lae-summary" aria-label="Summary" placeholder="Summary will appear here." data-i18n-attrs="aria-label:summary,placeholder:summaryPlaceholder" role="log" aria-live="polite" readonly rows="1"></textarea>
+
+      <!-- Hide Log toggle (under Summary, left-aligned) -->
+      <div class="panel-log-toggle" id="transcribe-hide-log-toggle">
+        <label class="checkbox-label">
+          <input type="checkbox" id="transcribe-hide-log" checked>
+          <span data-i18n="hideLogWindow">Hide log window</span>
+        </label>
+      </div>
+
+      <!-- Transcribe log output (separate from inline status to avoid overwrites during long jobs) -->
+      <textarea id="transcribe-log-output" class="status-log panel-log-output" role="log" aria-live="polite" readonly rows="8" data-i18n="logsWillAppearHere" data-i18n-attrs="aria-label:transcribeStatusLogAriaLabel"></textarea>
+
+    <!-- (progress bar removed; indeterminate spinner + text is shown inline above) -->
+  </div>
+</div>
+
+<!-- ==================== SPEED TEST PANEL ==================== -->
+<div id="speed-test" class="panel-section hidden">
+  <div class="section">
+    <div class="panel-toolbar-controls">
+      <span class="toolbar-flex-spacer"></span>
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip tooltip-bottom" id="speed-test-overview-tooltip"></div>
+      </div>
+    </div>
+
+    <!-- Network Test -->
+    <h3><span data-i18n="networkTest"></span></h3>
+    <div class="field-group horizontal">
+      <button id="start-network-test" data-i18n="runNetworkTest" class="button"></button>
+      <button id="reset-network-test" class="btn-danger button" data-i18n="resetNetworkTest"></button>
+      <button id="cancel-network-test" class="btn-danger button" data-i18n="cancel" disabled></button>
+      <div id="network-test-inline-status" aria-live="polite" aria-atomic="true" aria-hidden="true">
+        <div id="network-test-connecting" class="loader" aria-hidden="true">
+          <div class="scanner">
+            <span class="lae-scan-text" data-i18n="speedTestRunningLabel" data-i18n-attrs="data-scan-text:speedTestRunningLabel"></span>
+          </div>
+        </div>
+        <span id="network-test-inline-message"></span>
+      </div>
+      <!-- 🐹 Network speed test hamster (independent of drive tests) -->
+      <div id="speedtest-network-job-status" aria-hidden="true"></div>
+    </div>
+
+    <h3><span data-i18n="summary"></span></h3>
+    <div id="network-test-results" class="status-log lae-summary spaced-bottom"><span data-i18n="noNetworkResults"></span></div>
+    
+    <!-- Drive Tests -->
+    <div class="heading-with-tooltip">
+      <h3><span data-i18n="driveTests"></span></h3>
+      <div class="tooltip-container">
+        <div class="icon">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <div class="tooltip" id="speedtest-info-tooltip"></div>
+      </div>
+    </div>
+    <div id="drive-tests" class="spaced-top">
+      <div class="speedtest-drive-list">
+        <div class="speedtest-drive-row">
+          <button id="select-drive-1" class="button drive-btn" data-i18n="speedTestDrive1Label"></button>
+          <div id="drive-path-1" class="drive-path-box"><span data-i18n="drivePathEmpty"></span></div>
+        </div>
+
+        <div class="speedtest-drive-row">
+          <button id="select-drive-2" class="button drive-btn" data-i18n="speedTestDrive2Label"></button>
+          <div id="drive-path-2" class="drive-path-box"><span data-i18n="drivePathEmpty"></span></div>
+        </div>
+
+        <div class="speedtest-drive-row">
+          <button id="select-drive-3" class="button drive-btn" data-i18n="speedTestDrive3Label"></button>
+          <div id="drive-path-3" class="drive-path-box"><span data-i18n="drivePathEmpty"></span></div>
+        </div>
+      </div>
+      <div class="video-grid-2col spaced-top">
+        <div class="form-item">
+          <label for="test-size" data-i18n="testSize"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="speedTestSelectSizePlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="test-size" name="test-size">
+          </div>
+        </div>
+
+        <div class="form-item">
+          <label for="io-mode" data-i18n="mode"></label>
+          <div class="dropdown-wrapper dropdown-display">
+            <input class="chosen-value" type="text" placeholder="" data-i18n="speedTestSelectModePlaceholder">
+            <ul class="value-list"></ul>
+            <span class="dropdown-arrow"></span>
+            <input type="hidden" id="io-mode" name="io-mode">
+          </div>
+        </div>
+      </div>
+
+      <!-- Run Test Button + inline progress + hamster (same row) -->
+      <div class="field-group horizontal spaced-top" id="speedtest-controls-row">
+        <button id="test-selected-drives" data-i18n="testSelectedDrives" class="button"></button>
+        <button id="reset-speedtest" class="btn-danger button" data-i18n="resetSpeedTest"></button>
+        <button id="cancel-speedtest" class="btn-danger button" data-i18n="cancelSpeedTest" disabled></button>
+
+        <div id="speedtest-loader-inline" aria-live="polite">
+          <progress id="speedtest-progress" max="100" value="0"></progress>
+          <output id="speedtest-progress-output" for="speedtest-progress"></output>
+        </div>
+
+        <!-- Hamster, same structure/scale used in other panels -->
+        <div id="speedtest-job-status" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- Summary of drive tests -->
+    <h3><span data-i18n="summary"></span></h3>
+    <div id="drive-test-results" class="status-log lae-summary"><span data-i18n="noDriveResults"></span></div>
+
+  </div>
+</div>
+
+      </main>
+    </div>
+<!-- window-content -->
+    </div>
+<!-- app -->
+
+<!-- ⚙️ App Logic Script -->
+  <!-- Sentry renderer SDK (bundled; loads before other renderer scripts). -->
+  <script src="dist-obfuscated/renderer.sentry.js"></script>
+  <!-- Load CSInterface only inside CEP -->
+  <script src="utils/cepLoader.js"></script>
+  <script src="./node_modules/i18next/dist/umd/i18next.min.js"></script>
+  <script src="./node_modules/i18next-browser-languagedetector/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="utils/dropdown.js" defer></script>
+  <!-- QC & Delivery prefs: shared across Transcribe + Subtitle Editor -->
+  <script src="utils/qcDeliveryPrefs.js" defer></script>
+  <script src="renderer.clone-utils.js" defer></script>
+  <script src="utils/watch-mode.js" defer></script>
+
+  <!-- Shared UI theme -->
+  <script src="utils/theme.js" defer></script>
+  <script src="utils/rendererDialogs.js" defer></script>
+  <script src="utils/runtimeAssetUi.js" defer></script>
+  <script src="utils/startupRuntimeAssets.js" defer></script>
+
+  <!-- Main-window panel bootstrap -->
+  <script src="utils/indexStartup.js" defer></script>
+
+  <!-- Transcribe output format mini-panels -->
+  <script src="utils/formatOptions.js" defer></script>
+
+  <!-- Renderer script loader (obfuscated → plain fallback; CSP-safe) -->
+  <script type="module" src="utils/rendererScriptLoader.mjs"></script>
+</body>
+</html>
